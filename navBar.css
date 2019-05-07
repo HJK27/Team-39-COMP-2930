@@ -16,12 +16,15 @@
 
 .container-fluid {
   background: white;
-  position: relative;
 }
 .logo {
-  position: absolute;
-  bottom: -10px;
+  float: left;
 }
+
+.logo1 {
+  width: 80%;
+}
+
 .navbar-nav {
   float: right;
 }
