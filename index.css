@@ -1,0 +1,99 @@
+.btn-danger {
+    float: right;
+}
+
+.about {
+    text-align: center;
+    margin: 50px;
+    font-size: 50px;
+}
+
+.body {
+    margin: auto;
+    width: 70%;
+    font-size: 20px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.btn-danger {
+  background-color: green;
+  border-color: green;
+  float: right;
+}
+
+.container {
+  background-image: url('bimage.jpg');
+  width: 100%;
+  font-family: 'Open Sans';
+}
+
+.container-fluid {
+  background: white;
+  position: relative;
+}
+.logo {
+  position: absolute;
+  bottom: -10px;
+}
+.navbar-nav {
+  float: right;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: black;
+}
+
+.navbar-inverse {
+  margin: 0;
+  border-color: white;
+}
+
+#recycleimg {
+
+}
+
+
+
+.calculator {
+    width: 33%;
+    float: left;
+    text-align: center;
+    margin-top: 40px;
+}
+
+#calculatorimg {
+    width: 150px;
+    height: 150px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    
+}
+
+.game {
+    width: 33%;
+    float: left;
+    text-align: center;
+    margin-top: 40px;
+}
+
+#gameimg {
+    width: 150px;
+    height: 100px;
+    margin-top: 55px;
+    margin-bottom: 55px;
+}
+
+.signup {
+    width: 33%;
+    float: left;
+    text-align: center;
+    margin-top: 40px;
+}
+
+#signupimg {
+    width: 250px;
+    height: 150px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
