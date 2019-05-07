@@ -2,4 +2,39 @@
 
 body {
     background-image: url("background.jpg");
+    font-family: 'PT Sans', sans-serif;
+}
+
+#title {
+    margin-top: 0.5em;
+    margin-bottom: 0.2em;
+    font-size: 32pt;
+    text-align: center;
+}
+
+#row1, #row2, #row3 {
+    text-align: center;
+}
+
+.select {
+    padding: 0.5em;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+#bin {
+    float: left;
+    width: 7em;
+    position: relative;
+    margin-top: 0.5em;
+    margin-left: 25%;
+}
+
+#counter {
+    font-size: 15pt;
+    float: right;
+    position: relative;
+    margin-top: 1em;
+    margin-right: 25%;
+    margin-bottom: 2em;
 }
