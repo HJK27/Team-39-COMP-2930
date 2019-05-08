@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
+body {
+  background-image: url('bimage.jpg');
+  background-repeat: no-repeat;
+  margin-bottom: 2%;
+}
 .btn-danger {
   background-color: green;
   border-color: green;
@@ -8,12 +13,15 @@
 
 .container-fluid {
   background: white;
-  position: relative;
 }
 .logo {
-  position: absolute;
-  bottom: -10px;
+  float: left;
 }
+
+.logo1 {
+  width: 80%;
+}
+
 .navbar-nav {
   float: right;
 }
@@ -22,30 +30,23 @@
   color: black;
 }
 
-body {
-}
-
 .navbar-inverse {
   margin: 0;
   border-color: white;
 }
 
 /* showcase */
-.container {
-  background-image: url('bimage.jpg');
 
-  opacity: 0.7;
-  width: 100%;
-  min-height: 1000px;
-  font-family: 'Open Sans';
-}
 .box {
 }
 .box h2 {
-  margin-top: 100px;
+  margin-left: 10%;
   text-align: center;
+  padding: 4%;
+  width: 80%;
 }
 .home-h2 {
+  margin: 0;
   font-size: 48px;
   font-weight: 600;
   color: #ffffff;
@@ -59,7 +60,7 @@ body {
 }
 
 .home-button {
-  margin-top: 50px;
+  padding: 2%;
   text-align: center;
 }
 #SignUp {
