@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+    <title>Contact Us</title>
+    <style>
+        .us {
+          float: left;
+          width: 33%
+        }
+        .cus {
+            width: 25%
+        }
+        </style>
+</head>
+<body>
+    <div id="prompt">
+        <h1 class="text top">Get in touch with us!</h1>
+        <p class="text info">FILL OUT THE FORM BELOW WITH YOUR QUESTION AND WE WILL RESPOND ASAP!</p> 
+    </div>
+    <div id="send">
+        <form action="mailto:bbuddies39@gmail.com" method="post" enctype="text/plain">
+            <fieldset>
+                Name:<br>
+                <input type="text" placeholder="Name" name="name"><br><br>
+                E-mail:<br>
+                <input type="email" placeholder="Email" name="email"><br><br>
+                Message:<br>
+                <textarea rows="8" cols="100" name="message">
+                </textarea><br><br>
+                <input type = "submit" value = "Submit">
+            </fieldset>
+        </form>
+    </div>
+    <br>
+    <div id="contactUs">
+        <div id="adr" class="us">
+            <img src="./img/adr.png" alt="Address" class="cus"><br>
+            <p>addressaddressaddress</p>
+        </div>
+        <div id="phn" class="us">
+                <img src="./img/phn.png" alt="Phone" class="cus"><br>
+            <p>000-000-0000</p>
+        </div>
+        <div id="email" class="us">
+                <img src="./img/eml.png" alt="Email" class="cus"><br>
+            <p>bbuddies39@gmail.com</p>
+        </div>
+    </div>
+</body>
+</html>
