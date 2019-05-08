@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: green;
+}
+.navbar-inverse .navbar-nav > li > a:link {
+  color: black;
+}
+
+.navbar-inverse .navbar-nav > li > a:active {
+  color: black;
+}
+
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: black;
+}
+
 .btn-danger {
   background-color: green;
   border-color: green;
