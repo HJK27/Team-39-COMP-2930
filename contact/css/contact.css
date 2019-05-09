@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+    background-image: url("../img/background.jpg");
+    font-family: 'PT Sans', sans-serif;
+}
+
+.btn-danger {
+  background-color: green;
+  border-color: green;
+  float: right;
+}
+
+.container-fluid {
+  background: white;
+}
+.logo {
+  float: left;
+}
+
+.logo1 {
+  width: 80%;
+}
+
+.navbar-nav {
+  float: right;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: black;
+}
+
+.navbar-inverse {
+  margin: 0;
+  border-color: white;
+}
+
+/* showcase */
+.box {
+}
+.box h2 {
+  margin-left: 10%;
+  text-align: center;
+  padding: 4%;
+  width: 80%;
+}
+.home-h2 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.container p {
+  width: 45%;
+  color: white;
+  font-size: 18px;
+}
+
+.home-button {
+  padding: 2%;
+  text-align: center;
+}
+#SignUp {
+  padding-bottom: 5px;
+  height: 55px;
+  border: 2px solid #f5f5f5;
+  border-radius: 10px;
+  color: #f5f5f5;
+  text-align: center;
+  text-decoration: none;
+  background: #464646;
+  box-shadow: 0 0 3px gray;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.slideShow {
+  margin-top: 50px;
+}
+
+.us {
+      float: left;
+      width: 33%
+}
+.cus {
+        width: 25%
+}
+
+#prompt {
+    margin-left: 50pt
+}
+
+#send {
+    margin-left: 30pt
+}
+
+#contactUs {
+    margin-left: 50pt
+}
