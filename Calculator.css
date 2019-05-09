@@ -24,17 +24,26 @@ body {
 
 #bin {
     float: left;
-    width: 7em;
+    width: 14em;
     position: relative;
-    margin-top: 0.5em;
     margin-left: 25%;
+    margin-bottom: 1em;
 }
 
-#counter {
+#counterWrapper {
     font-size: 15pt;
     float: right;
     position: relative;
-    margin-top: 1em;
+    margin-top: 2em;
     margin-right: 25%;
-    margin-bottom: 2em;
+}
+
+.counter {
+    text-align: center;
+    background-color: white;
+    width: 8em;
+}
+
+#moneyText {
+    margin-top: 0.5em;
 }
