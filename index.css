@@ -50,10 +50,13 @@
 }
 
 #recycleimg {
-
+    width: 300px;
+    height: 300px;
 }
 
-
+#headertext {
+    text-align: center;
+}
 
 .calculator {
     width: 33%;
