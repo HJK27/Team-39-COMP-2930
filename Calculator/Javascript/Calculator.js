@@ -15,11 +15,11 @@ $(document).ready(function(){
 		$("#itemCounter").text(itemCounter);
 		
 	if (itemCounter == 10) {
-		$("#bin").attr("src", "./recycling-bin-1.png");
+		$("#bin").attr("src", "../Images/recycling-bin-1.png");
 	} else if (itemCounter == 20) {
-		$("#bin").attr("src", "./recycling-bin-2.png");
+		$("#bin").attr("src", "../Images/recycling-bin-2.png");
 	} else if (itemCounter == 30) {
-		$("#bin").attr("src", "./recycling-bin-3.png");
+		$("#bin").attr("src", "../Images/recycling-bin-3.png");
 	}
 	});
 	
