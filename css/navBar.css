@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.btn-danger {
+  background-color: green;
+  border-color: green;
+  float: right;
+}
+
+
+.container-fluid {
+  background: white;
+  position: relative;
+}
+.logo {
+  position: none;
+  bottom: -10px;
+}
+.navbar-nav {
+  float: right;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: black;
+}
+
+.navbar-inverse {
+  margin: 0;
+  border-color: white;
+}

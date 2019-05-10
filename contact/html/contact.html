@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+    <title>Contact Us</title>
+    <style>
+        </style>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+          rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+        />
+        <link rel="stylesheet" href="../css/contact.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+        <header>
+                <nav class="navbar navbar-inverse">
+                  <div class="container-fluid">
+                    <div class="logo">
+                      <img class="logo1" src="../img/Logo1.png" />
+                    </div>
+                    <button class="btn btn-danger navbar-btn">Login</button>
+                    <ul class="nav navbar-nav">
+                      <li><a href="../../Home.html">About us</a></li>
+                      <li><a href="../../Calculator.html">Calculator</a></li>
+                      <li><a href="#">Games</a></li>
+                      <li><a href="#">Locator</a></li>
+                      <li><a href="#">FAQ</a></li>
+                      <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                  </div>
+                </nav>
+              </header>
+    <div id="prompt">
+        <h1 class="text top">Get in touch with us!</h1>
+        <p class="text info">FILL OUT THE FORM BELOW WITH YOUR QUESTION AND WE WILL RESPOND ASAP!</p> 
+    </div>
+    <div id="send">
+        <form action="mailto:bbuddies39@gmail.com" method="post" enctype="text/plain">
+            <fieldset>
+                <p class="iform" id="fname">Name:</p>
+                <input type="text" placeholder="Name" name="name" class="iform"><br><br>
+                <p class="iform">E-mail:</p>
+                <input type="email" placeholder="Email" name="email" class="iform"><br><br>
+                <p class="iform">Message:</p>
+                <textarea rows="8" cols="100" name="message" class="iform">
+                </textarea><br><br>
+                <input type = "submit" value = "Submit" class="iformsub">
+            </fieldset>
+        </form>
+    </div>
+    <br>
+    <div id="contactUs">
+        <div id="adr" class="us">
+            <img src="../img/adr.png" alt="Address" class="cus"><br>
+            <p>addressaddressaddress</p>
+        </div>
+        <div id="phn" class="us">
+                <img src="../img/phn.png" alt="Phone" class="cus"><br>
+            <p>000-000-0000</p>
+        </div>
+        <div id="email" class="us">
+                <img src="../img/eml.png" alt="Email" class="cus"><br>
+            <p>bbuddies39@gmail.com</p>
+        </div>
+    </div>
+</body>
+</html>

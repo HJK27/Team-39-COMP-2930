@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+/* NavBar CSS */
+.navbar-inverse .navbar-nav > li > a {
+  color: green;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: green;
+}
+
+.navbar-inverse .navbar-nav > li > a:link {
+  color: black;
+}
+
+.navbar-inverse .navbar-nav > li > a:active {
+  color: black;
+}
+
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: black;
+}
+
+.navbar-inverse .navbar-nav > li > a:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.btn-danger {
+  background-color: green;
+  border-color: green;
+  float: right;
+}
+
+.container {
+  background-image: url('bimage.jpg');
+  opacity: 0.7;
+  width: 100%;
+  min-height: 1000px;
+  font-family: 'Open Sans';
+}
+
+.container-fluid {
+  position: relative;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  background: white;
+}
+.logo {
+  float: left;
+}
+
+.logo1 {
+  width: 80%;
+}
+
+.navbar-nav {
+  float: right;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: black;
+}
+
+.navbar-inverse {
+  margin: 0;
+  border-color: white;
+}
+
+/*Calculator CSS*/
+body {
+    background-image: url("background.jpg");
+    font-family: 'PT Sans', sans-serif;
+}
+
+#title {
+    margin-top: 0.5em;
+    margin-bottom: 0.2em;
+    font-size: 32pt;
+    text-align: center;
+}
+
+#row1, #row2, #row3 {
+    text-align: center;
+}
+
+.select {
+    padding: 0.5em;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+#bin {
+    float: left;
+    width: 14em;
+    position: relative;
+    margin-left: 25%;
+    margin-bottom: 1em;
+}
+
+#counterWrapper {
+    font-size: 15pt;
+    float: right;
+    position: relative;
+    margin-top: 2em;
+    margin-right: 25%;
+}
+
+.counter {
+    text-align: center;
+    background-color: white;
+    width: 8em;
+}
+
+#moneyText {
+    margin-top: 0.5em;
+}

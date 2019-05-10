@@ -1,3 +1,19 @@
+.btn-danger {
+    float: right;
+}
+
+.about {
+    text-align: center;
+    margin: 50px;
+    font-size: 50px;
+}
+
+.body {
+    margin: auto;
+    width: 70%;
+    font-size: 20px;
+}
+
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 .btn-danger {
@@ -8,9 +24,7 @@
 
 .container {
   background-image: url('bimage.jpg');
-  opacity: 0.7;
   width: 100%;
-  min-height: 1000px;
   font-family: 'Open Sans';
 }
 
