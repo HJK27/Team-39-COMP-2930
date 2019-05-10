@@ -9,6 +9,7 @@ $(document).ready(function(){
 	
 	var itemCounter = 0;
 	var moneyCounter = 0.00;
+	var secret = 0;
 	
 	$(".select").click(function() {	
 		itemCounter++;
@@ -26,16 +27,25 @@ $(document).ready(function(){
 	$("#aluminum").click(function() {
 		moneyCounter = moneyCounter + 0.05;
 		$("#moneyCounter").text("$" + Number.parseFloat(moneyCounter).toFixed(2));
+		if (secret == 6) {
+			secret++;
+		}
 	});
 	
 	$("#plastic").click(function() {
 		moneyCounter = moneyCounter + 0.05;
 		$("#moneyCounter").text("$" + Number.parseFloat(moneyCounter).toFixed(2));
+		if (secret == 0) {
+			secret++;
+		}
 	});
 	
 	$("#drinkBox").click(function() {
 		moneyCounter = moneyCounter + 0.05;
 		$("#moneyCounter").text("$" + Number.parseFloat(moneyCounter).toFixed(2));
+		if (secret == 1) {
+			secret++;
+		}
 	});
 	
 	$("#gableTop").click(function() {
@@ -46,11 +56,17 @@ $(document).ready(function(){
 	$("#glass").click(function() {
 		moneyCounter = moneyCounter + 0.05;
 		$("#moneyCounter").text("$" + Number.parseFloat(moneyCounter).toFixed(2));
+		if (secret == 4) {
+			secret++;
+		}
 	});
 	
 	$("#biMetal").click(function() {
 		moneyCounter = moneyCounter + 0.05;
 		$("#moneyCounter").text("$" + Number.parseFloat(moneyCounter).toFixed(2));
+		if (secret == 7) {
+			$("#bin").attr("src", "../Images/EasterEgg.png");
+		}
 	});
 	
 	$("#pouch").click(function() {
@@ -61,6 +77,9 @@ $(document).ready(function(){
 	$("#pCup").click(function() {
 		moneyCounter = moneyCounter + 0.05;
 		$("#moneyCounter").text("$" + Number.parseFloat(moneyCounter).toFixed(2));
+		if (secret == 5) {
+			secret++;
+		}
 	});
 	
 	$("#waterBox").click(function() {
@@ -71,11 +90,17 @@ $(document).ready(function(){
 	$("#liqPlastic").click(function() {
 		moneyCounter = moneyCounter + 0.10;
 		$("#moneyCounter").text("$" + Number.parseFloat(moneyCounter).toFixed(2));
+		if (secret == 2) {
+			secret++;
+		}
 	});
 	
 	$("#liqGlass").click(function() {
 		moneyCounter = moneyCounter + 0.10;
 		$("#moneyCounter").text("$" + Number.parseFloat(moneyCounter).toFixed(2));
+		if (secret == 3) {
+			secret++;
+		}
 	});
 	
 	$("#liqBox").click(function() {
