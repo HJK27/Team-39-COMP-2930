@@ -48,3 +48,30 @@
   margin: 0;
   border-color: white;
 }
+
+.markerdiv {
+  width: 70%;
+  margin: 50px;
+}
+
+.title {
+  text-align: center;
+}
+
+#title {
+  font-size: 60px;
+}
+
+#map {
+  height: 500px;
+  width: 80%;
+  margin: auto;
+}
+
+.numberof{
+  text-align: center;
+}
+
+#numberof {
+  font-size: 30px;
+}
