@@ -1,6 +1,4 @@
-body {
-  background-image: url("images/grad.png");
-}
+
 
 .btn-danger {
     float: right;
@@ -21,7 +19,7 @@ body {
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 body {
-  background-image: url('bimage.jpg');
+  background-image: url('images/bimage.jpg');
   background-repeat: no-repeat;
   margin-bottom: 2%;
   min-height: 1100px;
@@ -118,9 +116,10 @@ body {
 }
 
 #map {
-  height: 500px;
-  width: 80%;
-  margin: auto;
+  height: 600px;
+  width: 700px;
+  border-style: groove;
+  border-radius: 20px;
 }
 
 .numberof{
@@ -129,4 +128,8 @@ body {
 
 #numberof {
   font-size: 30px;
+}
+
+.locations {
+  
 }
