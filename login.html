@@ -12,9 +12,12 @@
     <link rel="stylesheet" href="./css/navBar.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="./jquery-3.4.1.min.js"></script>
     <title>Login</title>
 </head>
 <body>
+   
+
     <header>
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
@@ -36,20 +39,34 @@
             </div>
         </nav>
     </header>
+
     <div class = "loginWindow--Login"> 
         <div class = "icon--login">Bottle Buddy</div>
-        <input type = "email" placeholder = " Email" class = "textbox--login">
+        <input type = "email" placeholder = " Email" class = "textbox--login" id = "email_login">
         <br/>
-        <input type = "password" placeholder = "Password" class = "textbox--login">
+        <input type = "password" placeholder = "Password" class = "textbox--login" id = "pw_login">
         <br/>
         <span>Forgot Password?</span>
-        <button class ="loginButton--login">Login</button>
+        <button class ="loginButton--login" onclick = "login()">Login</button>
         <br/>
         <button class = "signin--login">Sign in with Facebook</button>
         <br/>
-        <button class = "signin--login">Sign in with google</button> 
+        <button class = "signin--login" onclick = "signInWithGoogle()">Sign in with Google</button></a> 
         <br/>
-        <span>Need an account? <a href="./signup.html">Sign up</a></span>
+        <span class = "signup--login">Need an account? <a href="./signup.html">Sign up</a></span>
     </div>
+
+    
+    
+    
+     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+     <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+
+     <!-- Add Firebase products that you want to use -->
+       <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
+     <!-- Initialize Firebase -->
+    <script src="./js/firebase-init.js"></script>
+    <script src = "./js/login.js"></script>
 </body>
 </html>
