@@ -98,3 +98,7 @@ body {
     font-size: 32pt;
     text-align: center;
 }
+
+#gameDiv {
+    margin-left: 18%;
+}
