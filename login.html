@@ -19,45 +19,73 @@
    
 
     <header>
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="logo">
-                    <img src="./image/Logo1.png" />
-                </div>
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Bottle Buddy</a>
-                </div>
-                <button class="btn btn-danger navbar-btn">Login</button>
-                <ul class="nav navbar-nav">
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Calculator</a></li>
-                    <li><a href="#">Games</a></li>
-                    <li><a href="#">Locator</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="logo">
+            <img class="logo1" src="./image/Logo1.png" />
+          </div>
+          <button class="btn btn-danger navbar-btn" id = "login--logout"></button>
+          <ul class="nav navbar-nav">
+            <li><a href="../About%20Us/">About us</a></li>
+            <li><a href="../Calculator/HTML/">Calculator</a></li>
+            <li><a href="../Game/HTML/">Games</a></li>
+            <li><a href="../Depot%20Locator/">Locator</a></li>
+            <li><a href="../FAQ-Page/">FAQ</a></li>
+            <li><a href="../contact/html/">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
     </header>
 
-    <div class = "loginWindow--Login"> 
-        <div class = "icon--login">Bottle Buddy</div>
+    <div class = "loginWindow--Login" id = "loginWindow"> 
+        <div class = "icon--login">Sign In</div>
         <input type = "email" placeholder = " Email" class = "textbox--login" id = "email_login">
         <br/>
         <input type = "password" placeholder = "Password" class = "textbox--login" id = "pw_login">
         <br/>
-        <span>Forgot Password?</span>
-        <button class ="loginButton--login" onclick = "login()">Login</button>
+        <span class = "span--login switch" id = "forgotPW">Forgot Password?  &nbsp;</span>
+        <button class = "button--small button" id ="button_login" onclick = "login()">Login</button>
         <br/>
-        <button class = "signin--login">Sign in with Facebook</button>
+        <button class = "signin--login button" onclick = "signInWithGoogle()">Sign in with Google</button></a> 
         <br/>
-        <button class = "signin--login" onclick = "signInWithGoogle()">Sign in with Google</button></a> 
-        <br/>
-        <span class = "signup--login">Need an account? <a href="./signup.html">Sign up</a></span>
+        <span class = "span--login">Need an account? <span class = "switch" id = "signupSwitch">Sign up</span></span>
     </div>
 
-    
-    
+    <div class = "loginWindow--Login" id = "signupWindow"> 
+        <div class = "icon--login">Sign Up</div>
+        <input type = "email" placeholder = " Email" class = "textbox--login" id = "email_signup">
+        <br/>
+        <input type = "password" placeholder = "Password" class = "textbox--login" id = "pw_signup">
+        <br/>
+        <button class = "signin--login button" id ="button_signup">Register</button>
+        <br/>
+        <button class = "signin--login button">Sign up with google</button> 
+        <br/>
+        <span class = "span--login switch" id = "loginSwitch">return to login</span>
+    </div>
+
+    <div class = "loginWindow--Login" id = "pwresetwindow">
+        <div class = "icon--login">Recover Account</div>
+        <div class = "span--login para--resetpw">We can help you reset your password. Enter your email below and we will send you a password reset email.</div>
+        <input type = "email" placeholder = " Email" class = "textbox--login" id = "email_pwreset">
+        <br/>
+        <button class = "signin--login button" id ="button_submit">Submit</button>
+        <br/>
+        <span class = "span--login switch" id = "loginSwitch2">return to login</span>
+    </div>
+
+    <div class = "loginWindow--Login" id = "newWindow">
+        <div class = "icon--login">Email Sent</div>
+        <div class = "span--login para--resetpw">Email has been sent. Please check your email to reset your password.</div>
+        <span class = "span--login switch" id = "loginSwitch3">return to login</span>
+    </div>
+
+    <div class = "loginWindow--Login" id = "signedinWindow">
+        <div class = "icon--login">Welcome</div>
+        <div class = "span--login para--resetpw text--signedin" id = "Hello"></div>
+        <div class = "span--login para--resetpw text--signedin">You have successfully signed in.</div><br/>
+        <button onclick="logout()">logout</button>
+    </div>
     
      <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
      <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
