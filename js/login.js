@@ -48,15 +48,10 @@ firebase.auth().onAuthStateChanged(user => {
     $("#loginWindow").css("display", "none");
     $("#signupWindow").css("display", "none");
     $("#signedinWindow").css("display", "initial");
-    document.getElementById("login--logout").innerHTML = "Logout";
     email = user.email;
-    console.log(email);
     document.getElementById("Hello").innerHTML = "Hi \"" + email + "\",";
-    $("#login--logout").on("click", logout);
-
-   // setTimeout(function(){ window.location = '../Home-Page/Home.html'; }, 3000);
+    setTimeout(function(){ window.location = './Home-Page/Home.html'; }, 2000);
   } else {
-    document.getElementById("login--logout").innerHTML = "Login";
     $("#loginWindow").css("display", "initial");
     $("#signupWindow").css("display", "none");
     $("#signedinWindow").css("display", "none");
