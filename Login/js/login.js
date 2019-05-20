@@ -50,7 +50,7 @@ firebase.auth().onAuthStateChanged(user => {
     $("#signedinWindow").css("display", "initial");
     email = user.email;
     document.getElementById("Hello").innerHTML = "Hi \"" + email + "\",";
-    setTimeout(function(){ window.location = './Home-Page/Home.html'; }, 2000);
+    setTimeout(function(){ window.location = '../Home-Page/Home.html'; }, 2000);
   } else {
     $("#loginWindow").css("display", "initial");
     $("#signupWindow").css("display", "none");

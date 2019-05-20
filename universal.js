@@ -9,12 +9,12 @@ firebase.auth().onAuthStateChanged(user => {
 });
 
 function toLogin() {
-    window.location = '../login.html';
+    window.location = '../Login/login.html';
 }
 
 function logout() {
     firebase.auth().signOut().then(function() {
-      window.location = '../login.html';
+      window.location = '../Login/login.html';
     }).catch(function(error) {
       // An error happened.
     });

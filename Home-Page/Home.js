@@ -6,6 +6,6 @@ $(document).ready(function() {
     });
 
     $("#SignUp").on("click", function() {
-        window.location = "../login.html";
+        window.location = "../Login/login.html";
     });
 });
