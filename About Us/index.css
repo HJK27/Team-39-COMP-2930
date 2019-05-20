@@ -137,17 +137,16 @@ body {
     margin-bottom: 2em;
 }
 
-.signup {
+.locator {
     width: 33%;
     float: left;
     text-align: center;
     margin-top: 40px;
 }
 
-#signupimg {
+#locatorimg {
     width: 11em;
-    margin-top: 2.8em;
-    margin-bottom: 2.4em;
+
 }
 
 .team {
@@ -190,7 +189,7 @@ body {
         margin-bottom: 1.8em;
     }
 
-    #signupimg {
+    #locatorimg {
         width: 8em;
         margin-top: 1.8em;
         margin-bottom: 1.8em;
@@ -216,7 +215,7 @@ body {
         margin-bottom: 1.5em;
     }
 
-    #signupimg {
+    #locatorimg {
         width: 5em;
         margin-top: 1.5em;
         margin-bottom: 1.5em;
