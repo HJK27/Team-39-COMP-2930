@@ -100,5 +100,8 @@ body {
 }
 
 #gameDiv {
-    margin-left: 18%;
-}
+        margin-left: 18%;
+        width: 66%;
+        height: auto;
+        box-shadow: 4px 4px 14px 0px rgba(0,0,0,0.75);
+      }

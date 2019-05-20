@@ -35,9 +35,10 @@ function preload() {
 }
 
 function create() {
+    game.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
 
-    sctext1 = game.add.text(620, 30, 'Score: 0', { font: "30px Arial", fill: "#ffffff" });
-    time = game.add.text(620, 80, 'Timer: 30', { font: "30px Arial", fill: "#ffffff" });
+    sctext1 = game.add.text(610, 30, 'Score: 0', { font: "30px Arial", fill: "#ffffff" });
+    time = game.add.text(610, 80, 'Timer: 30', { font: "30px Arial", fill: "#ffffff" });
     
     timer = game.time.create(false);
     timer.loop(1000, countdown, this);
@@ -65,9 +66,9 @@ function countdown() {
 
     total++;
     t = 30 - total;
-    if (t == -1) {
+    if (t == 0) {
         finalScore = score;
-    } else if (t <= -1) {
+    } else if (t <= 0) {
         game.world.removeAll();
         resultText = game.add.text(300, 210, 'Your Score is ' + finalScore, { font: "30px Arial", fill: "#ffffff" });
     } else {
