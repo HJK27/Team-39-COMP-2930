@@ -152,12 +152,17 @@ body {
 /*contact info*/
 
 .us {
-    width: 33%;
+    width: 25%;
+	margin-left: 6.5%;
+	margin-bottom: 1em;
     float: left;
     text-align: center;
+	background: rgba(255, 255, 255, 0.8);
+	border-radius: 10px;
+	box-shadow: 6px 6px 10px #999999;
 }
 .cus {
-      width: 25%;
+      width: 40%;
 }
 
 
