@@ -137,27 +137,33 @@ body {
     margin-bottom: 2em;
 }
 
-.signup {
+.locator {
     width: 33%;
     float: left;
     text-align: center;
     margin-top: 40px;
 }
 
-#signupimg {
-    width: 11em;
-    margin-top: 2.8em;
-    margin-bottom: 2.4em;
+#locatorimg {
+    width: 10em;
+
 }
 
 .team {
     display: inline-block;
     margin-left: 1em;
     margin-right: 1em;
+	width: 14em;
 }
 
 .profile {
     width: 11em;
+    margin-top: 2.8em;
+    margin-bottom: 2.4em;
+}
+
+.Eugene_Profile, .Edwin_Profile, .Harry_Profile, .Jun_Profile, .Kevin_Profile {
+    width: 10em;
     margin-top: 2.8em;
     margin-bottom: 2.4em;
 }
@@ -184,10 +190,10 @@ body {
         margin-bottom: 1.8em;
     }
 
-    #signupimg {
-        width: 8em;
-        margin-top: 1.8em;
-        margin-bottom: 1.8em;
+    #locatorimg {
+        width: 6em;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
     }
 }
 
@@ -210,9 +216,10 @@ body {
         margin-bottom: 1.5em;
     }
 
-    #signupimg {
+    #locatorimg {
         width: 5em;
-        margin-top: 1.5em;
-        margin-bottom: 1.5em;
+        margin-top: 0em;
+        margin-bottom: 0em;
     }
+
 }

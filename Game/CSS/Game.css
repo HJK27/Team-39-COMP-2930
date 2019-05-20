@@ -89,7 +89,6 @@
 /*Game CSS*/
 body {
     background-image: url("../Images/GameBackground.jpeg");
-    font-family: 'PT Sans', sans-serif;
 }
 
 #title {
@@ -97,4 +96,9 @@ body {
     margin-bottom: 0.2em;
     font-size: 32pt;
     text-align: center;
+}
+
+#gameDiv {
+    margin-left: 18%;
+    margin-bottom: 5%;
 }
