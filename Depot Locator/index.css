@@ -120,6 +120,7 @@ body {
   width: 700px;
   border-style: groove;
   border-radius: 20px;
+  float: left;
 }
 
 .numberof{
@@ -131,5 +132,14 @@ body {
 }
 
 .locations {
-  
+  background-color: white;
+  width: 430px;
+  height: 600px;
+  float: right;
+  border-style: groove;
+  border-radius: 20px;
+}
+
+.loc1, .loc2, .loc3 {
+  padding: 10px;
 }

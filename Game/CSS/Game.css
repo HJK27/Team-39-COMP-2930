@@ -89,7 +89,6 @@
 /*Game CSS*/
 body {
     background-image: url("../Images/GameBackground.jpeg");
-    font-family: 'PT Sans', sans-serif;
 }
 
 #title {
@@ -104,4 +103,5 @@ body {
         width: 66%;
         height: auto;
         box-shadow: 4px 4px 14px 0px rgba(0,0,0,0.75);
-      }
+        margin-bottom: 5%;
+}

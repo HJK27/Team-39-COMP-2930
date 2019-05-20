@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+body {
+    background-image: url('../image/bg.jpg');
+    font-family: PT Sans;
+    color: #000000;
+    margin: 0;
+}
+
+a, a:link, a:visited, a:hover, a:active {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.loginWindow--Login {
+    background-color: rgba(233, 233, 233, 0.8);
+    border-radius: 10%;
+    width: 400px;
+    height: 350px;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin: 0 auto;
+    position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+    margin: auto;
+    box-shadow: 3px 3px 5px #888888;
+}
+
+.icon--login {
+    background-color: #B9E1E5;
+    width: 250px;
+    height: 50px;
+    line-height: 50px;
+    margin: 10px auto;
+    font-size: 15pt;
+    color: #0CAA55;
+    font-weight: bold;
+    border: 1px solid Black;
+}
+
+.textbox--login {
+    background-color: rgb(233, 233, 233, 0);
+	border: 0px;
+	border-bottom: 1px solid #000000;
+    margin: 10px;
+    width: 225px;
+    font-size: 12pt;
+    font-family: 'PT Sans';
+    font-weight: 300;
+    color: #000000;
+}
+
+#signupWindow, #pwresetwindow, #newWindow, #signedinWindow {
+    display: none;
+}
+
+.signin--login {
+    width: 225px;
+    margin: 5px;
+    font-size: 11pt;
+    margin-bottom: 10px;
+}
+
+.button--small {
+    margin-bottom: 5px;
+
+}
+
+.button {
+    background-color: #0CAA55;
+    color: #ffffff;
+    border: 0px;
+    box-shadow: 0px 1px 3px #CDCDCD;
+    margin-top: 5px;
+    border-radius: 3px;
+}
+
+.para--resetpw {
+    max-width: 225px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.text--signedin {
+    font-size: 14pt;
+}
+
+@media screen and (max-width: 600px) {
+    .loginWindow--Login {
+        width: 300px;
+        height: 250px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    
+    .icon--login {
+        width: 150px;
+        height: 40px;
+        line-height: 40px;
+        margin: 0px auto;
+        font-size: 12pt;
+    }
+
+    .button {
+        font-size: 8pt;
+    }
+
+    .textbox--login {
+        margin: 5px;
+        width: 125px;
+        font-size: 8pt;
+    }
+    
+    .signin--login {
+        width: 125px;
+        margin: 5px;
+    }
+
+    .span--login {
+        font-size: 8pt;
+    }
+
+    .para--resetpw {
+        max-width: 135px;
+        font-size: 8pt;
+    }
+
+    .text--signedin {
+        font-size: 10pt;
+    }
+}
