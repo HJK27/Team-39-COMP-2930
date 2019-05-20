@@ -3,12 +3,12 @@
 
 var game = new Phaser.Game(800, 470, Phaser.AUTO, 'gameDiv', { preload: preload, create: create });
 
-var GEM_SIZE = 64;
-var GEM_SPACING = 2;
-var GEM_SIZE_SPACED = GEM_SIZE + GEM_SPACING;
+var ICON_SIZE = 64;
+var ICON_SPACING = 2;
+var ICON_SIZE_SPACED = ICON_SIZE + ICON_SPACING;
 var BOARD_COLS;
 var BOARD_ROWS;
-var MATCH_MIN = 3; // min number of same color gems required in a row to be considered a match
+var MATCH_MIN = 3; // min number of same color icons required in a row to be considered a match
 
 var score = 0;
 var finalScore;
@@ -21,16 +21,16 @@ var time;
 var total;
 var t;
 
-var gems;
-var selectedGem = null;
-var selectedGemStartPos;
-var selectedGemTween;
-var tempShiftedGem = null;
+var icons;
+var selectedIcon = null;
+var selectedIconStartPos;
+var selectedIconTween;
+var tempShiftedIcon = null;
 var allowInput;
 
 function preload() {
 
-    game.load.spritesheet("GEMS", "./assets/sprites/icons.png", GEM_SIZE, GEM_SIZE);
+    game.load.spritesheet("ICONS", "./assets/sprites/icons.png", ICON_SIZE, ICON_SIZE);
 
 }
 
@@ -47,16 +47,16 @@ function create() {
     
     game.stage.backgroundColor = "#42b9f4";
     
-    // fill the screen with as many gems as possible
+    // fill the screen with as many icons as possible
     spawnBoard();
 
-    // currently selected gem starting position. used to stop player form moving gems too far.
-    selectedGemStartPos = { x: 0, y: 0 };
+    // currently selected icon starting position. used to stop player form moving icons too far.
+    selectedIconStartPos = { x: 0, y: 0 };
     
-    // used to disable input while gems are dropping down and respawning
+    // used to disable input while icons are dropping down and respawning
     allowInput = false;
 
-    game.input.addMoveCallback(slideGem, this);
+    game.input.addMoveCallback(slideIcon, this);
     timer.start();
     
 
@@ -77,205 +77,205 @@ function countdown() {
 
 }
 
-function releaseGem() {
+function releaseIcon() {
 
-    if (tempShiftedGem === null) {
-        selectedGem = null;
+    if (tempShiftedIcon === null) {
+        selectedIcon = null;
         return;
     }
 
-    // when the mouse is released with a gem selected
+    // when the mouse is released with a icon selected
     // 1) check for matches
-    // 2) remove matched gems
-    // 3) drop down gems above removed gems
+    // 2) remove matched icons
+    // 3) drop down icons above removed icons
     // 4) refill the board
 
-    var canKill = checkAndKillGemMatches(selectedGem);
-    canKill = checkAndKillGemMatches(tempShiftedGem) || canKill;
+    var canKill = checkAndKillIconMatches(selectedIcon);
+    canKill = checkAndKillIconMatches(tempShiftedIcon) || canKill;
 
-    if (! canKill) // there are no matches so swap the gems back to the original positions
+    if (! canKill) // there are no matches so swap the icons back to the original positions
     {
-        var gem = selectedGem;
+        var icon = selectedIcon;
 
-        if (gem.posX !== selectedGemStartPos.x || gem.posY !== selectedGemStartPos.y)
+        if (icon.posX !== selectedIconStartPos.x || icon.posY !== selectedIconStartPos.y)
         {
-            if (selectedGemTween !== null)
+            if (selectedIconTween !== null)
             {
-                game.tweens.remove(selectedGemTween);
+                game.tweens.remove(selectedIconTween);
             }
 
-            selectedGemTween = tweenGemPos(gem, selectedGemStartPos.x, selectedGemStartPos.y);
+            selectedIconTween = tweenIconPos(icon, selectedIconStartPos.x, selectedIconStartPos.y);
 
-            if (tempShiftedGem !== null)
+            if (tempShiftedIcon !== null)
             {
-                tweenGemPos(tempShiftedGem, gem.posX, gem.posY);
+                tweenIconPos(tempShiftedIcon, icon.posX, icon.posY);
             }
 
-            swapGemPosition(gem, tempShiftedGem);
+            swapIconPosition(icon, tempShiftedIcon);
 
-            tempShiftedGem = null;
+            tempShiftedIcon = null;
 
         }
     }
 
-    removeKilledGems();
+    removeKilledIcons();
 
-    var dropGemDuration = dropGems();
+    var dropIconDuration = dropIcons();
 
-    // delay board refilling until all existing gems have dropped down
-    game.time.events.add(dropGemDuration * 100, refillBoard);
+    // delay board refilling until all existing icons have dropped down
+    game.time.events.add(dropIconDuration * 100, refillBoard);
 
     allowInput = false;
 
-    selectedGem = null;
-    tempShiftedGem = null;
+    selectedIcon = null;
+    tempShiftedIcon = null;
 
 }
 
-function slideGem(pointer, x, y) {
+function slideIcon(pointer, x, y) {
 
-    // check if a selected gem should be moved and do it
+    // check if a selected icon should be moved and do it
 
-    if (selectedGem && pointer.isDown)
+    if (selectedIcon && pointer.isDown)
     {
-        var cursorGemPosX = getGemPos(x);
-        var cursorGemPosY = getGemPos(y);
+        var cursorIconPosX = getIconPos(x);
+        var cursorIconPosY = getIconPos(y);
 
-        if (checkIfGemCanBeMovedHere(selectedGemStartPos.x, selectedGemStartPos.y, cursorGemPosX, cursorGemPosY))
+        if (checkIfIconCanBeMovedHere(selectedIconStartPos.x, selectedIconStartPos.y, cursorIconPosX, cursorIconPosY))
         {
-            if (cursorGemPosX !== selectedGem.posX || cursorGemPosY !== selectedGem.posY)
+            if (cursorIconPosX !== selectedIcon.posX || cursorIconPosY !== selectedIcon.posY)
             {
-                // move currently selected gem
-                if (selectedGemTween !== null)
+                // move currently selected icon
+                if (selectedIconTween !== null)
                 {
-                    game.tweens.remove(selectedGemTween);
+                    game.tweens.remove(selectedIconTween);
                 }
 
-                selectedGemTween = tweenGemPos(selectedGem, cursorGemPosX, cursorGemPosY);
+                selectedIconTween = tweenIconPos(selectedIcon, cursorIconPosX, cursorIconPosY);
 
-                gems.bringToTop(selectedGem);
+                icons.bringToTop(selectedIcon);
 
-                // if we moved a gem to make way for the selected gem earlier, move it back into its starting position
-                if (tempShiftedGem !== null)
+                // if we moved a icon to make way for the selected icon earlier, move it back into its starting position
+                if (tempShiftedIcon !== null)
                 {
-                    tweenGemPos(tempShiftedGem, selectedGem.posX , selectedGem.posY);
-                    swapGemPosition(selectedGem, tempShiftedGem);
+                    tweenIconPos(tempShiftedIcon, selectedIcon.posX , selectedIcon.posY);
+                    swapIconPosition(selectedIcon, tempShiftedIcon);
                 }
 
-                // when the player moves the selected gem, we need to swap the position of the selected gem with the gem currently in that position 
-                tempShiftedGem = getGem(cursorGemPosX, cursorGemPosY);
+                // when the player moves the selected icon, we need to swap the position of the selected icon with the icon currently in that position 
+                tempShiftedIcon = getIcon(cursorIconPosX, cursorIconPosY);
 
-                if (tempShiftedGem === selectedGem)
+                if (tempShiftedIcon === selectedIcon)
                 {
-                    tempShiftedGem = null;
+                    tempShiftedIcon = null;
                 }
                 else
                 {
-                    tweenGemPos(tempShiftedGem, selectedGem.posX, selectedGem.posY);
-                    swapGemPosition(selectedGem, tempShiftedGem);
+                    tweenIconPos(tempShiftedIcon, selectedIcon.posX, selectedIcon.posY);
+                    swapIconPosition(selectedIcon, tempShiftedIcon);
                 }
             }
         }
     }
 }
 
-// fill the screen with as many gems as possible
+// fill the screen with as many icons as possible
 function spawnBoard() {
 
-    BOARD_COLS = Math.floor(600 / GEM_SIZE_SPACED);
-    BOARD_ROWS = Math.floor(game.world.height / GEM_SIZE_SPACED);
+    BOARD_COLS = Math.floor(600 / ICON_SIZE_SPACED);
+    BOARD_ROWS = Math.floor(game.world.height / ICON_SIZE_SPACED);
 
-    gems = game.add.group();
+    icons = game.add.group();
 
     for (var i = 0; i < BOARD_COLS; i++)
     {
         for (var j = 0; j < BOARD_ROWS; j++)
         {
-            var gem = gems.create(i * GEM_SIZE_SPACED, j * GEM_SIZE_SPACED, "GEMS");
-            gem.name = 'gem' + i.toString() + 'x' + j.toString();
-            gem.inputEnabled = true;
-            gem.events.onInputDown.add(selectGem, this);
-            gem.events.onInputUp.add(releaseGem, this);
-            randomizeGemColor(gem);
-            setGemPos(gem, i, j); // each gem has a position on the board
-            gem.kill();
+            var icon = icons.create(i * ICON_SIZE_SPACED, j * ICON_SIZE_SPACED, "ICONS");
+            icon.name = 'icon' + i.toString() + 'x' + j.toString();
+            icon.inputEnabled = true;
+            icon.events.onInputDown.add(selectIcon, this);
+            icon.events.onInputUp.add(releaseIcon, this);
+            randomizeIconColor(icon);
+            setIconPos(icon, i, j); // each icon has a position on the board
+            icon.kill();
         }
     }
 
-    removeKilledGems();
+    removeKilledIcons();
 
-    var dropGemDuration = dropGems();
+    var dropIconDuration = dropIcons();
 
-    // delay board refilling until all existing gems have dropped down
-    game.time.events.add(dropGemDuration * 100, refillBoard);
+    // delay board refilling until all existing icons have dropped down
+    game.time.events.add(dropIconDuration * 100, refillBoard);
 
     allowInput = false;
 
-    selectedGem = null;
-    tempShiftedGem = null;
+    selectedIcon = null;
+    tempShiftedIcon = null;
 
     // refillBoard();
 }
 
-// select a gem and remember its starting position
-function selectGem(gem) {
+// select a icon and remember its starting position
+function selectIcon(icon) {
 
     if (allowInput)
     {
-        selectedGem = gem;
-        selectedGemStartPos.x = gem.posX;
-        selectedGemStartPos.y = gem.posY;
+        selectedIcon = icon;
+        selectedIconStartPos.x = icon.posX;
+        selectedIconStartPos.y = icon.posY;
     }
 
 }
 
-// find a gem on the board according to its position on the board
-function getGem(posX, posY) {
+// find a icon on the board according to its position on the board
+function getIcon(posX, posY) {
 
-    return gems.iterate("id", calcGemId(posX, posY), Phaser.Group.RETURN_CHILD);
+    return icons.iterate("id", calcIconId(posX, posY), Phaser.Group.RETURN_CHILD);
 
 }
 
 // convert world coordinates to board position
-function getGemPos(coordinate) {
+function getIconPos(coordinate) {
 
-    return Math.floor(coordinate / GEM_SIZE_SPACED);
-
-}
-
-// set the position on the board for a gem
-function setGemPos(gem, posX, posY) {
-
-    gem.posX = posX;
-    gem.posY = posY;
-    gem.id = calcGemId(posX, posY);
+    return Math.floor(coordinate / ICON_SIZE_SPACED);
 
 }
 
-// the gem id is used by getGem() to find specific gems in the group
+// set the position on the board for a icon
+function setIconPos(icon, posX, posY) {
+
+    icon.posX = posX;
+    icon.posY = posY;
+    icon.id = calcIconId(posX, posY);
+
+}
+
+// the icon id is used by getIcon() to find specific icons in the group
 // each position on the board has a unique id
-function calcGemId(posX, posY) {
+function calcIconId(posX, posY) {
 
     return posX + posY * BOARD_COLS;
 
 }
 
-// since the gems are a spritesheet, their color is the same as the current frame number
-function getGemColor(gem) {
+// since the icons are a spritesheet, their color is the same as the current frame number
+function getIconColor(icon) {
 
-    return gem.frame;
-
-}
-
-// set the gem spritesheet to a random frame
-function randomizeGemColor(gem) {
-
-    gem.frame = game.rnd.integerInRange(0, gem.animations.frameTotal - 1);
+    return icon.frame;
 
 }
 
-// gems can only be moved 1 square up/down or left/right
-function checkIfGemCanBeMovedHere(fromPosX, fromPosY, toPosX, toPosY) {
+// set the icon spritesheet to a random frame
+function randomizeIconColor(icon) {
+
+    icon.frame = game.rnd.integerInRange(0, icon.animations.frameTotal - 1);
+
+}
+
+// icons can only be moved 1 square up/down or left/right
+function checkIfIconCanBeMovedHere(fromPosX, fromPosY, toPosX, toPosY) {
 
     if (toPosX < 0 || toPosX >= BOARD_COLS || toPosY < 0 || toPosY >= BOARD_ROWS)
     {
@@ -295,16 +295,16 @@ function checkIfGemCanBeMovedHere(fromPosX, fromPosY, toPosX, toPosY) {
     return false;
 }
 
-// count how many gems of the same color lie in a given direction
-// eg if moveX=1 and moveY=0, it will count how many gems of the same color lie to the right of the gem
-// stops counting as soon as a gem of a different color or the board end is encountered
-function countSameColorGems(startGem, moveX, moveY) {
+// count how many icons of the same color lie in a given direction
+// eg if moveX=1 and moveY=0, it will count how many icons of the same color lie to the right of the icon
+// stops counting as soon as a icon of a different color or the board end is encountered
+function countSameColorIcons(startIcon, moveX, moveY) {
 
-    var curX = startGem.posX + moveX;
-    var curY = startGem.posY + moveY;
+    var curX = startIcon.posX + moveX;
+    var curY = startIcon.posY + moveY;
     var count = 0;
 
-    while (curX >= 0 && curY >= 0 && curX < BOARD_COLS && curY < BOARD_ROWS && getGemColor(getGem(curX, curY)) === getGemColor(startGem))
+    while (curX >= 0 && curY >= 0 && curX < BOARD_COLS && curY < BOARD_ROWS && getIconColor(getIcon(curX, curY)) === getIconColor(startIcon))
     {
         count++;
         curX += moveX;
@@ -315,44 +315,44 @@ function countSameColorGems(startGem, moveX, moveY) {
 
 }
 
-// swap the position of 2 gems when the player drags the selected gem into a new location
-function swapGemPosition(gem1, gem2) {
+// swap the position of 2 icons when the player drags the selected icon into a new location
+function swapIconPosition(icon1, icon2) {
 
-    var tempPosX = gem1.posX;
-    var tempPosY = gem1.posY;
-    setGemPos(gem1, gem2.posX, gem2.posY);
-    setGemPos(gem2, tempPosX, tempPosY);
+    var tempPosX = icon1.posX;
+    var tempPosY = icon1.posY;
+    setIconPos(icon1, icon2.posX, icon2.posY);
+    setIconPos(icon2, tempPosX, tempPosY);
 
 }
 
-// count how many gems of the same color are above, below, to the left and right
-// if there are more than 3 matched horizontally or vertically, kill those gems
-// if no match was made, move the gems back into their starting positions
-function checkAndKillGemMatches(gem) {
+// count how many icons of the same color are above, below, to the left and right
+// if there are more than 3 matched horizontally or vertically, kill those icons
+// if no match was made, move the icons back into their starting positions
+function checkAndKillIconMatches(icon) {
 
-    if (gem === null) { return; }
+    if (icon === null) { return; }
 
     var canKill = false;
 
-    // process the selected gem
+    // process the selected icon
 
-    var countUp = countSameColorGems(gem, 0, -1);
-    var countDown = countSameColorGems(gem, 0, 1);
-    var countLeft = countSameColorGems(gem, -1, 0);
-    var countRight = countSameColorGems(gem, 1, 0);
+    var countUp = countSameColorIcons(icon, 0, -1);
+    var countDown = countSameColorIcons(icon, 0, 1);
+    var countLeft = countSameColorIcons(icon, -1, 0);
+    var countRight = countSameColorIcons(icon, 1, 0);
 
     var countHoriz = countLeft + countRight + 1;
     var countVert = countUp + countDown + 1;
 
     if (countVert >= MATCH_MIN)
     {
-        killGemRange(gem.posX, gem.posY - countUp, gem.posX, gem.posY + countDown);
+        killIconRange(icon.posX, icon.posY - countUp, icon.posX, icon.posY + countDown);
         canKill = true;
     }
 
     if (countHoriz >= MATCH_MIN)
     {
-        killGemRange(gem.posX - countLeft, gem.posY, gem.posX + countRight, gem.posY);
+        killIconRange(icon.posX - countLeft, icon.posY, icon.posX + countRight, icon.posY);
         canKill = true;
     }
 
@@ -360,8 +360,8 @@ function checkAndKillGemMatches(gem) {
 
 }
 
-// kill all gems from a starting position to an end position
-function killGemRange(fromX, fromY, toX, toY) {
+// kill all icons from a starting position to an end position
+function killIconRange(fromX, fromY, toX, toY) {
 
     fromX = Phaser.Math.clamp(fromX, 0, BOARD_COLS - 1);
     fromY = Phaser.Math.clamp(fromY , 0, BOARD_ROWS - 1);
@@ -372,8 +372,8 @@ function killGemRange(fromX, fromY, toX, toY) {
     {
         for (var j = fromY; j <= toY; j++)
         {
-            var gem = getGem(i, j);
-            gem.kill();
+            var icon = getIcon(i, j);
+            icon.kill();
             
             score += 50;
             sctext1.text = 'Score: ' + score;
@@ -382,32 +382,32 @@ function killGemRange(fromX, fromY, toX, toY) {
 
 }
 
-// move gems that have been killed off the board
-function removeKilledGems() {
+// move icons that have been killed off the board
+function removeKilledIcons() {
 
-    gems.forEach(function(gem) {
-        if (!gem.alive) {
-            setGemPos(gem, -1,-1);
+    icons.forEach(function(icon) {
+        if (!icon.alive) {
+            setIconPos(icon, -1,-1);
         }
     });
 
 }
 
-// animated gem movement
-function tweenGemPos(gem, newPosX, newPosY, durationMultiplier) {
+// animated icon movement
+function tweenIconPos(icon, newPosX, newPosY, durationMultiplier) {
 
-    console.log('Tween ',gem.name,' from ',gem.posX, ',', gem.posY, ' to ', newPosX, ',', newPosY);
+    console.log('Tween ',icon.name,' from ',icon.posX, ',', icon.posY, ' to ', newPosX, ',', newPosY);
     if (durationMultiplier === null || typeof durationMultiplier === 'undefined')
     {
         durationMultiplier = 1;
     }
 
-    return game.add.tween(gem).to({x: newPosX  * GEM_SIZE_SPACED, y: newPosY * GEM_SIZE_SPACED}, 100 * durationMultiplier, Phaser.Easing.Linear.None, true);
+    return game.add.tween(icon).to({x: newPosX  * ICON_SIZE_SPACED, y: newPosY * ICON_SIZE_SPACED}, 100 * durationMultiplier, Phaser.Easing.Linear.None, true);
 
 }
 
-// look for gems with empty space beneath them and move them down
-function dropGems() {
+// look for icons with empty space beneath them and move them down
+function dropIcons() {
 
     var dropRowCountMax = 0;
 
@@ -417,17 +417,17 @@ function dropGems() {
 
         for (var j = BOARD_ROWS - 1; j >= 0; j--)
         {
-            var gem = getGem(i, j);
+            var icon = getIcon(i, j);
 
-            if (gem === null)
+            if (icon === null)
             {
                 dropRowCount++;
             }
             else if (dropRowCount > 0)
             {
-                gem.dirty = true;
-                setGemPos(gem, gem.posX, gem.posY + dropRowCount);
-                tweenGemPos(gem, gem.posX, gem.posY, dropRowCount);
+                icon.dirty = true;
+                setIconPos(icon, icon.posX, icon.posY + dropRowCount);
+                tweenIconPos(icon, icon.posX, icon.posY, dropRowCount);
             }
         }
 
@@ -438,35 +438,35 @@ function dropGems() {
 
 }
 
-// look for any empty spots on the board and spawn new gems in their place that fall down from above
+// look for any empty spots on the board and spawn new icons in their place that fall down from above
 function refillBoard() {
 
-    var maxGemsMissingFromCol = 0;
+    var maxIconsMissingFromCol = 0;
 
     for (var i = 0; i < BOARD_COLS; i++)
     {
-        var gemsMissingFromCol = 0;
+        var iconsMissingFromCol = 0;
 
         for (var j = BOARD_ROWS - 1; j >= 0; j--)
         {
-            var gem = getGem(i, j);
+            var icon = getIcon(i, j);
 
-            if (gem === null)
+            if (icon === null)
             {
-                gemsMissingFromCol++;
-                gem = gems.getFirstDead();
-                gem.reset(i * GEM_SIZE_SPACED, -gemsMissingFromCol * GEM_SIZE_SPACED);
-                gem.dirty = true;
-                randomizeGemColor(gem);
-                setGemPos(gem, i, j);
-                tweenGemPos(gem, gem.posX, gem.posY, gemsMissingFromCol * 2);
+                iconsMissingFromCol++;
+                icon = icons.getFirstDead();
+                icon.reset(i * ICON_SIZE_SPACED, -iconsMissingFromCol * ICON_SIZE_SPACED);
+                icon.dirty = true;
+                randomizeIconColor(icon);
+                setIconPos(icon, i, j);
+                tweenIconPos(icon, icon.posX, icon.posY, iconsMissingFromCol * 2);
             }
         }
 
-        maxGemsMissingFromCol = Math.max(maxGemsMissingFromCol, gemsMissingFromCol);
+        maxIconsMissingFromCol = Math.max(maxIconsMissingFromCol, iconsMissingFromCol);
     }
 
-    game.time.events.add(maxGemsMissingFromCol * 2 * 100, boardRefilled);
+    game.time.events.add(maxIconsMissingFromCol * 2 * 100, boardRefilled);
 
 }
 
@@ -477,21 +477,21 @@ function boardRefilled() {
     {
         for (var j = BOARD_ROWS - 1; j >= 0; j--)
         {
-            var gem = getGem(i, j);
+            var icon = getIcon(i, j);
 
-            if (gem.dirty)
+            if (icon.dirty)
             {
-                gem.dirty = false;
-                canKill = checkAndKillGemMatches(gem) || canKill;
+                icon.dirty = false;
+                canKill = checkAndKillIconMatches(icon) || canKill;
             }
         }
     }
 
     if(canKill){
-        removeKilledGems();
-        var dropGemDuration = dropGems();
-        // delay board refilling until all existing gems have dropped down
-        game.time.events.add(dropGemDuration * 100, refillBoard);
+        removeKilledIcons();
+        var dropIconDuration = dropIcons();
+        // delay board refilling until all existing icons have dropped down
+        game.time.events.add(dropIconDuration * 100, refillBoard);
         allowInput = false;
     } else {
         allowInput = true;
