@@ -1,47 +1,163 @@
 ﻿<!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>About Us</title>
     <meta charset="utf-8" />
 
     <!--Nav Bar Styling-->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" 
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-</head>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
 
-<body>
+  <body>
     <!--Nav Bar-->
-    <header>
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="logo">
-                    <a href="../Home-Page/Home.html">
-                            <img class="logo1" src="./Images/Logo1.png" />
-                        </a>
-                    </div>
-                    <button class="btn btn-danger navbar-btn" onclick="window.location.href='../Login/login.html'">Login</button>
-                    <ul class="nav navbar-nav">
-                      <li><a href="./index.html">About us</a></li>
-                      <li><a href="../Calculator/HTML/Calculator.html">Calculator</a></li>
-                      <li><a href="../Game/HTML/Game.html">Games</a></li>
-                      <li><a href="../Depot%20Locator/index.html">Locator</a></li>
-                      <li><a href="../FAQ-Page/faq.html">FAQ</a></li>
-                      <li><a href="../contact/html/contact.html">Contact</a></li>
-                    </ul>
+    <nav class="navbar navbar-expand-sm navbar-light bg-white">
+        <a href="../../Home-Page/Home.html" class="navbar-brand">
+          <img src="Images/Logo1.png"></a>
+        <button
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarMenu">
+          <div class="navbar-content">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="../../About%20Us/index.html" class="nav-link">About us</a>
+            </li>
+            <li class="nav-item">
+              <a href="../../Calculator/HTML/Calculator.html" class="nav-link">Calculator</a>
+            </li>
+            <li class="nav-item">
+              <a href="../../Game/HTML/Game.html" class="nav-link">Games</a>  
+            </li>
+            <li class="nav-item">
+              <a href="../../Depot%20Locator/index.html" class="nav-link">Locator</a>
+            </li>
+            <li class="nav-item">
+              <a href="../../FAQ-Page/faq.html" class="nav-link" id="FAQ">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a href="./contact.html" class="nav-link">Contact Us</a>
+            </li>
+            <li class="nav-item" id="Login-menu" onclick="window.location.href='../../Login/login.html'">
+              <a href="#" class="nav-link">Login</a>
+            </li>
+          </div>
+            <div class="navbar-login">
+              <button class="btn btn-danger navbar-btn" onclick="window.location.href='../../Login/login.html'">Login</button>
             </div>
-        </nav>
-    </header>
+          </ul>
+        </div>
+      </nav>
 
     <div class="about">
-        <img id="recycleimg" src="images/recycle.png" alt="Recycle">
+      <img id="recycleimg" src="images/recycle.png" alt="Recycle" />
     </div>
 
     <div class="body">
+      <h1 id="headertext"><b>So, what is it that we do?</b></h1>
+      <div class="whiteBox">
+        <p>
+          Well, we help recycle. Bottle Depot was initially founded on the
+          foundations of recycling and ecocity. Bottle depots, a system already
+          set up and managed by the government was not being fully made use of
+          and that was what caught the attention of our development and design
+          team.
+        </p>
+      </div>
+      <div class="calculator">
+        <img id="calculatorimg" src="images/calculator.png" alt="Calculator" />
+        <div class="whiteBox">
+          <p>
+            Kept in sent gave feel will oh it we. Has pleasure procured men
+            laughing shutters nay. Old insipidity motionless continuing law shy
+            partiality. Depending acuteness dependent eat use dejection.
+            Unpleasing astonished discovered not nor shy. Morning hearted now
+            met yet beloved evening.
+          </p>
+        </div>
+      </div>
+      <div class="game">
+        <img id="gameimg" src="images/game.png" alt="Game" />
+        <div class="whiteBox">
+          <p>
+            he exposed painted fifteen are noisier mistake led waiting. Surprise
+            not wandered speedily husbands although yet end. Are court tiled
+            cease young built fat one man taken. We highest ye friends is
+            exposed equally in. Ignorant had too strictly followed
+          </p>
+        </div>
+      </div>
+      <div class="signup">
+        <img id="signupimg" src="images/test.png" alt="Sign-Up" />
+        <div class="whiteBox">
+          <p>
+            Style too own civil out along. Perfectly offending attempted add
+            arranging age gentleman concluded. Get who uncommonly our expression
+            ten increasing considered occasional travelling. Ever read tell year
+            give may men call its. Piqued son turned fat income played end
+            wicket. To do noisy downs round an happy books.
+          </p>
+        </div>
+      </div>
+      <div id="teamWrapper">
+        <div class="team">
+          <img class="profile" src="images/test.png" alt="Eugene" />
+          <div class="whiteBox">
+            <p>
+              About Eugene
+            </p>
+          </div>
+        </div>
+
+        <div class="team">
+          <img class="profile" src="images/test.png" alt="Edwin" />
+          <div class="whiteBox">
+            <p>
+              About Edwin
+            </p>
+          </div>
+        </div>
+
+        <div class="team">
+          <img class="profile" src="images/test.png" alt="Harry" />
+          <div class="whiteBox">
+            <p>
+              About Harry
+            </p>
+          </div>
+        </div>
+
+        <div class="team">
+          <img class="profile" src="images/test.png" alt="Jun" />
+          <div class="whiteBox">
+            <p>
+              About Jun
+            </p>
+          </div>
+        </div>
+
+        <div class="team" id="bottom">
+          <img class="profile" src="images/test.png" alt="Kevin" />
+          <div class="whiteBox">
+            <p>
+              About Kevin
+            </p>
+          </div>
+        </div>
+      </div>
+=======
         <h1 id="headertext"><b>So, what is it that we do?</b></h1>
         <div class="whiteBox">
             <p>Well, we help recycle. Bottle Depot was initially founded on the foundations of recycling and ecocity.
@@ -150,6 +266,7 @@
                 </div>
             </div>
         </div>
+
     </div>
-</body>
+  </body>
 </html>
