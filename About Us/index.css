@@ -1,5 +1,5 @@
-.btn-danger {
-    float: right;
+body {
+    background-image: url("./Images/bimage.jpg");
 }
 
 .about {
@@ -10,48 +10,101 @@
 
 .body {
     margin: auto;
-    width: 70%;
+    width: 80%;
     font-size: 20px;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.whiteBox {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0.5em;
+    margin-left: 0.3em;
+    margin-right: 0.3em;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-.btn-danger {
-  background-color: green;
-  border-color: green;
-  float: right;
+/* NavBar CSS */
+.navbar-inverse .navbar-nav > li > a {
+    color: green;
 }
 
-.container {
-  background-image: url('bimage.jpg');
-  width: 100%;
-  font-family: 'Open Sans';
+    .navbar-inverse .navbar-nav > li > a:hover {
+        color: green;
+    }
+
+    .navbar-inverse .navbar-nav > li > a:link {
+        color: black;
+    }
+
+    .navbar-inverse .navbar-nav > li > a:active {
+        color: black;
+    }
+
+    .navbar-inverse .navbar-nav > li > a:focus {
+        color: black;
+    }
+
+    .navbar-inverse .navbar-nav > li > a:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #000;
+        visibility: hidden;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+    }
+
+    .navbar-inverse .navbar-nav > li > a:hover:before {
+        visibility: visible;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+    }
+
+.btn-danger {
+    background-color: green;
+    border-color: green;
+    float: right;
 }
 
 .container-fluid {
-  background: white;
-  position: relative;
+    position: relative;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    background: white;
 }
+
 .logo {
-  position: absolute;
-  bottom: -10px;
+    float: left;
 }
+
+.logo1 {
+    width: 80%;
+}
+
 .navbar-nav {
-  float: right;
+    float: right;
 }
 
 .navbar-inverse .navbar-nav > li > a {
-  color: black;
+    color: black;
 }
 
 .navbar-inverse {
-  margin: 0;
-  border-color: white;
+    margin: 0;
+    border-color: white;
 }
 
+/*About Us CSS*/
 #recycleimg {
-    width: 300px;
-    height: 300px;
+    width: 25%;
 }
 
 #headertext {
@@ -66,11 +119,9 @@
 }
 
 #calculatorimg {
-    width: 150px;
-    height: 150px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    
+    width: 8em;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .game {
@@ -81,10 +132,9 @@
 }
 
 #gameimg {
-    width: 150px;
-    height: 100px;
-    margin-top: 55px;
-    margin-bottom: 55px;
+    width: 8em;
+    margin-top: 2.5em;
+    margin-bottom: 2em;
 }
 
 .signup {
@@ -95,8 +145,74 @@
 }
 
 #signupimg {
-    width: 250px;
-    height: 150px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    width: 11em;
+    margin-top: 2.8em;
+    margin-bottom: 2.4em;
+}
+
+.team {
+    display: inline-block;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.profile {
+    width: 11em;
+    margin-top: 2.8em;
+    margin-bottom: 2.4em;
+}
+
+@media only screen and (max-width: 800px) {
+    #headertext {
+        font-size: 1.5em;
+    }
+
+    .body {
+        font-size: 1.2em;
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #calculatorimg {
+        width: 5em;
+    }
+
+    #gameimg {
+        width: 5em;
+        margin-top: 1.8em;
+        margin-bottom: 1.8em;
+    }
+
+    #signupimg {
+        width: 8em;
+        margin-top: 1.8em;
+        margin-bottom: 1.8em;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #headertext {
+        font-size: 1em;
+    }
+
+    .body {
+        font-size: 0.8em;
+    }
+
+    #calculatorimg {
+        width: 3em;
+    }
+
+    #gameimg {
+        width: 3em;
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+    }
+
+    #signupimg {
+        width: 5em;
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+    }
 }
