@@ -88,7 +88,6 @@
 /*Calculator CSS*/
 body {
     background-image: url("../Images/background.jpg");
-    font-family: 'PT Sans', sans-serif;
 }
 
 #title {
@@ -140,4 +139,16 @@ body {
 
 #moneyText {
     margin-top: 0.5em;
+}
+
+@media only screen and (max-width: 938px) {
+    .select img {
+        width: 6em;
+    }
+}
+
+@media only screen and (max-width: 518px) {
+    #picWrapper {
+        width: 100%;
+    }
 }

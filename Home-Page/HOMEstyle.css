@@ -83,10 +83,8 @@ body {
 
 /* showcase */
 
-.box {
-}
 .box h2 {
-  margin-left: 10%;
+  margin: 0 auto;
   text-align: center;
   padding: 4%;
   width: 80%;
@@ -128,3 +126,15 @@ body {
 }
 
 /* link */
+
+@media screen and (max-width: 600px) {
+  .home-h2 {
+    font-size: 17pt;
+  }
+
+  #SignUp {
+    height: 40px;
+    font-size: 12pt;
+  }
+  
+}
