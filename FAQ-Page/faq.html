@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="./FAQstyle.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -14,45 +14,21 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-sm navbar-light bg-white">
-        <a href="#" class="navbar-brand">
-          <img src="Logo1.png"></a>
-        <button
-          class="navbar-toggler"
-          data-toggle="collapse"
-          data-target="#navbarMenu"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-  
-        <div class="collapse navbar-collapse" id="navbarMenu">
-          <div class="navbar-content">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a href="#" class="nav-link">About us</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">Calculator</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">Games</a>  
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">Locator</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link" id="FAQ">FAQ</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">Contact Us</a>
-            </li>
-            <li class="nav-item" id="Login-menu">
-              <a href="#" class="nav-link">Login</a>
-            </li>
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="logo">
+            <a href="../Home-Page/">
+            <img class="logo1" src="Logo1.png" />
+              </a>
           </div>
-            <div class="navbar-login">
-              <button class="btn btn-danger navbar-btn">Login</button>
-            </div>
+          <button class="btn btn-danger navbar-btn">Login</button>
+          <ul class="nav navbar-nav">
+            <li><a href="../About%20Us/">About us</a></li>
+            <li><a href="../Calculator/HTML/">Calculator</a></li>
+            <li><a href="../Game/HTML/">Games</a></li>
+            <li><a href="../Depot%20Locator/">Locator</a></li>
+            <li><a href="./">FAQ</a></li>
+            <li><a href="../contact/html/">Contact</a></li>
           </ul>
         </div>
       </nav>
@@ -60,15 +36,12 @@
     <div class="contain">
       <div id="FAQtitle">
         <h2>FREQUENTLY ASKED <b>QUESTIONS</b></h2>
-        <div id="FAQp">
         <p>
           Have a question? No problem! Check out the most common questions and
           answers below, and if you can’t find what you’re looking for, hit us
           up on the contact form!
         </p>
       </div>
-      </div>
-      <div id="showcase">
       <div class="FAQcontent" id="FAQdrop">
         <button class="accordion">Section 1</button>
         <div class="panel">
@@ -149,7 +122,6 @@
         <img src="bottlePicture.png" />
       </div>
     </div>
-    </div>
     <script>
       var acc = document.getElementsByClassName('accordion');
       var i;
@@ -166,20 +138,5 @@
         });
       }
     </script>
-    <script
-    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"
-  ></script>
   </body>
 </html>

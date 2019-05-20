@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Depot Locator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="logo">
+                    <a href="../Home-Page/">
+                    <img class="logo1" src="images/Logo1.png" />
+                        </a>
+                </div>
+                <button class="btn btn-danger navbar-btn">Login</button>
+                <ul class="nav navbar-nav">
+                    <li><a href="../About%20Us/">About us</a></li>
+                    <li><a href="../Calculator/HTML/">Calculator</a></li>
+                    <li><a href="../Game/HTML/">Games</a></li>
+                    <li><a href="./">Locator</a></li>
+                    <li><a href="../FAQ-Page/">FAQ</a></li>
+                    <li><a href="../contact/html/">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="title">
+            <p id="title">Depot Locator</h1>
+        </div>
+        <div class="numberof">
+            <p id="numberof">There are 3 bottle depots near you</p>
+        </div>
+        <div id="map"></div>
+    </div>
+
+    <script>
+        function initMap() {
+            var options = {
+                zoom: 13,
+                center: { lat: 49.251180, lng: -123.002716 }
+            }
+
+            var map = new google.maps.Map(document.getElementById('map'), options);
+
+            var marker1 = new google.maps.Marker({
+                position: { lat: 49.255275, lng: -123.009984 },
+                map: map
+            });
+
+            var marker2 = new google.maps.Marker({
+                position: { lat: 49.258374, lng: -122.978056 },
+                map: map
+            });
+
+            var marker3 = new google.maps.Marker({
+                position: { lat: 49.270643, lng: -123.017856 },
+                map: map
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJpHfYmz7jhb9wcoZyQMsl7fAPe2Klq7Q&callback=initMap">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

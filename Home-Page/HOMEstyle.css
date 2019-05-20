@@ -1,90 +1,114 @@
-/* page content*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+/*nav bar */
 
-body {
-  background-image: url(bimage.jpg);
-  background-repeat: none;
-}
-
-.landing-title {
-  text-align: center;
-  padding: 25px 0;
-}
-
-/* navbar */
-.navbar {
-  position: relative;
-}
-
-#navbarMenu {
-  position: absolute;
-  right: 2%;
-}
-
-.navbar-collapse .navbar-nav > .nav-item > a {
+.navbar-inverse .navbar-nav > li > a {
   color: green;
 }
 
-.navbar-collapse .navbar-nav > .nav-item > a:hover {
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: green;
+}
+
+.navbar-inverse .navbar-nav > li > a:link {
   color: black;
 }
 
-/* navbar animation */
-.navbar-content ul li a,
-.navbar-content ul li a:after,
-.navbar-content ul li a:before {
-  transition: all 0.5s;
+.navbar-inverse .navbar-nav > li > a:active {
+  color: black;
 }
 
-.navbar-content ul li a {
-  position: relative;
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: black;
 }
-.navbar-content ul li a:after {
+
+.navbar-inverse .navbar-nav > li > a:before {
+  content: '';
   position: absolute;
+  width: 100%;
+  height: 2px;
   bottom: 0;
   left: 0;
-  right: 0;
-  margin: auto;
-  width: 0%;
-  content: '.';
-  color: transparent;
-  background: black;
-  height: 2px;
+  background-color: #000;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
 }
-.navbar-content ul li a:hover:after {
-  width: 100%;
-}
-/* Login button */
 
+.navbar-inverse .navbar-nav > li > a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+body {
+  background-image: url('bimage.jpg');
+  background-repeat: no-repeat;
+  margin-bottom: 2%;
+}
 .btn-danger {
   background-color: green;
   border-color: green;
   float: right;
-  margin-top: 1%;
 }
 
-#Login-menu {
-  visibility: hidden;
-}
-/* slide show */
-#slider {
-  position: absolute;
-  left: 25%;
-  bottom: 10%;
-  width: 50%;
-  overflow: hidden;
-}
-#slider figure {
+.container-fluid {
   position: relative;
-  width: 500%;
-  animation: 20s slider infinite;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  background: white;
 }
-#slider figure img {
-  width: 20%;
+.logo {
   float: left;
 }
 
-/** Sign up Button */
+.logo1 {
+  width: 80%;
+}
 
+.navbar-nav {
+  float: right;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: black;
+}
+
+.navbar-inverse {
+  margin: 0;
+  border-color: white;
+}
+
+/* showcase */
+
+.box {
+}
+.box h2 {
+  margin-left: 10%;
+  text-align: center;
+  padding: 4%;
+  width: 80%;
+}
+.home-h2 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.container p {
+  width: 45%;
+  color: white;
+  font-size: 18px;
+}
+
+.home-button {
+  padding: 2%;
+  text-align: center;
+}
 #SignUp {
   padding-bottom: 5px;
   height: 55px;
@@ -99,86 +123,8 @@ body {
   font-weight: bold;
 }
 
-.home-button {
-  text-align: center;
+.slideShow {
+  margin-top: 50px;
 }
 
-/* 1200px Resolution */
-
-@media (max-width: 1200px) {
-  #slider {
-  }
-}
-/* mobile 700px */
-
-@media (max-width: 700px) {
-  body {
-    z-index: 90;
-  }
-  #navbarMenu {
-    width: 100%;
-    z-index: 90;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .btn-danger {
-    display: none;
-    clear: both;
-  }
-
-  #Login-menu {
-    visibility: visible;
-  }
-  /* nav bar */
-  .navbar-content ul li a:hover:after {
-    width: 20%;
-  }
-  .navbar-content ul li a:after {
-    right: auto;
-  }
-  .navbar-content ul li a {
-    z-index: 100;
-    width: auto;
-  }
-
-  .landing-title {
-    padding: 25px 0;
-  }
-
-  #slider {
-    bottom: 25%;
-    left: 10%;
-    width: 80%;
-  }
-}
-
-@keyframes slider {
-  0% {
-    left: 0;
-  }
-  20% {
-    left: 0;
-  }
-  25% {
-    left: -100%;
-  }
-  45% {
-    left: -100%;
-  }
-  50% {
-    left: -200%;
-  }
-  70% {
-    left: -200%;
-  }
-  75% {
-    left: -300%;
-  }
-  95% {
-    left: -300%;
-  }
-  100% {
-    left: -400%;
-  }
-}
+/* link */
