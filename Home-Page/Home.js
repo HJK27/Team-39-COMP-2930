@@ -4,4 +4,8 @@ $(document).ready(function() {
     }, function() {
         $(this).css("background-color", "#464646");
     });
+
+    $("#SignUp").on("click", function() {
+        window.location = "../login.html";
+    });
 });
