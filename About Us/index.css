@@ -153,10 +153,16 @@ body {
 .team {
     display: inline-block;
     margin-left: 1em;
-    margin-right: 1em;
+    margin-right: 1em;  
 }
 
 .profile {
+    width: 11em;
+    margin-top: 2.8em;
+    margin-bottom: 2.4em;
+}
+
+.Eugene_Profile, .Edwin_Profile, .Harry_Profile, .Jun_Profile, .Kevin_Profile {
     width: 11em;
     margin-top: 2.8em;
     margin-bottom: 2.4em;
@@ -215,4 +221,5 @@ body {
         margin-top: 1.5em;
         margin-bottom: 1.5em;
     }
+
 }
