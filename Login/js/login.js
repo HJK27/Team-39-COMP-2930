@@ -39,6 +39,7 @@ $(document).ready(function(){
   });
 
   $("#button_login").on("click", login);
+  $("#button_google").on("click", signInWithGoogle);
   $("#button_signup").on("click", signup);
   $("#button_submit").on("click", passwordReset);
 });
