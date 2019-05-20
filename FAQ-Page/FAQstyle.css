@@ -2,106 +2,87 @@
 
 body {
   background-image: url('bimage.jpg');
-  background-repeat: no-repeat;
+  background-size: auto;
   margin-bottom: 2%;
-  min-height: 1100px;
+  min-height: 700px;
 }
 
-/*nav bar */
-
-.navbar-inverse .navbar-nav > li > a {
-  color: green;
-}
-
-.navbar-inverse .navbar-nav > li > a:hover {
-  color: green;
-}
-
-.navbar-inverse .navbar-nav > li > a:link {
-  color: black;
-}
-
-.navbar-inverse .navbar-nav > li > a:active {
-  color: black;
-}
-
-.navbar-inverse .navbar-nav > li > a:focus {
-  color: black;
-}
-
-.navbar-inverse .navbar-nav > li > a:before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #000;
-  visibility: hidden;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
-}
-
-.navbar-inverse .navbar-nav > li > a:hover:before {
-  visibility: visible;
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
-}
-
-.btn-danger {
-  background-color: green;
-  border-color: green;
-  float: right;
-}
-
-.container-fluid {
+.container {
   position: relative;
   font-weight: 600;
   font-size: 14px;
   text-transform: uppercase;
   background: white;
 }
-.logo {
-  float: left;
+
+/* navbar */
+.navbar {
+  position: relative;
 }
 
-.logo1 {
-  width: 80%;
+#navbarMenu {
+  position: absolute;
+  right: 2%;
 }
 
-.navbar-nav {
-  float: right;
+.navbar-collapse .navbar-nav > .nav-item > a {
+  color: green;
 }
 
-.navbar-inverse .navbar-nav > li > a {
+.navbar-collapse .navbar-nav > .nav-item > a:hover {
   color: black;
 }
 
-.navbar-inverse {
-  margin: 0;
-  border-color: white;
+/* navbar animation */
+.navbar-content ul li a,
+.navbar-content ul li a:after,
+.navbar-content ul li a:before {
+  transition: all 0.5s;
+}
+
+.navbar-content ul li a {
+  position: relative;
+}
+.navbar-content ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: black;
+  height: 2px;
+}
+.navbar-content ul li a:hover:after {
+  width: 100%;
+}
+/* Login button */
+
+.btn-danger {
+  background-color: green;
+  border-color: green;
+  float: right;
+  margin-top: 1%;
+}
+
+#Login-menu {
+  visibility: hidden;
 }
 
 /*FAQ content*/
 
 #FAQtitle {
+  position: relative;
   margin-top: 2%;
-  margin-left: 35%;
   text-align: center;
-  width: 50em;
 }
 
 #FAQtitle h2 {
-  position: relative;
-  clear: both;
-  display: inline-block;
   font-size: 35px;
   color: #000;
   font-weight: 300;
-  margin-left: 14px;
-  margin-bottom: 20px;
   text-transform: uppercase;
 }
 
@@ -111,10 +92,13 @@ body {
   margin-bottom: 0;
 }
 
+#FAQp {
+}
+
 #FAQdrop {
   float: left;
   width: 40%;
-  margin-left: 15%;
+  margin-left: 10%;
   margin-top: 5%;
 }
 /* drop down animation */
@@ -138,6 +122,7 @@ body {
 
 .panel {
   padding: 0 18px;
+  margin-bottom: 12px;
   background-color: white;
   max-height: 0;
   overflow: hidden;
@@ -152,10 +137,77 @@ body {
 /* display-inline content */
 
 .FAQcontent {
+  margin-left: 0;
   display: inline-block;
 }
 
 #bottleImage {
   margin-top: 7%;
-  margin-left: 7%;
+  margin-left: 5%;
+  width: 40%;
+}
+
+.contain {
+  position: relative;
+}
+
+@media (max-width: 1100px) {
+  #bottleImage {
+    margin-top: 0%;
+    margin-left: 20%;
+    width: 50%;
+  }
+
+  .FAQcontent {
+    display: inline-block;
+  }
+  #FAQdrop {
+    width: 50%;
+    margin-left: 2%;
+  }
+  #FAQtitle {
+    margin-top: 5%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .FAQcontent {
+    display: block;
+  }
+  #FAQdrop {
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  #FAQtitle {
+    margin-left: 10%;
+    width: 80%;
+  }
+}
+
+/* NavBar mobile 700px */
+
+@media (max-width: 700px) {
+  #navbarMenu {
+    position: inherit;
+  }
+
+  #Login-menu {
+    visibility: visible;
+  }
+  .navbar-content ul li a:hover:after {
+    width: 20%;
+  }
+  .navbar-content ul li a:after {
+    right: auto;
+  }
+
+  #bottleImage {
+    margin-left: 25%;
+  }
+
+  .FAQcontent img {
+    padding-top: 20%;
+    width: 95%;
+  }
 }
