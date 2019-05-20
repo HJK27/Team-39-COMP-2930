@@ -16,11 +16,11 @@ $(document).ready(function(){
 		$("#itemCounter").text(itemCounter);
 		
 	if (itemCounter == 10) {
-		$("#bin").attr("src", "../Images/recycling-bin-1.png");
+		$("#bin").attr("src", "./Images/recycling-bin-1.png");
 	} else if (itemCounter == 20) {
-		$("#bin").attr("src", "../Images/recycling-bin-2.png");
+		$("#bin").attr("src", "./Images/recycling-bin-2.png");
 	} else if (itemCounter == 30) {
-		$("#bin").attr("src", "../Images/recycling-bin-3.png");
+		$("#bin").attr("src", "./Images/recycling-bin-3.png");
 	}
 	});
 	
@@ -65,7 +65,7 @@ $(document).ready(function(){
 		moneyCounter = moneyCounter + 0.05;
 		$("#moneyCounter").text("$" + Number.parseFloat(moneyCounter).toFixed(2));
 		if (secret == 7) {
-			$("#bin").attr("src", "../Images/EasterEgg.png");
+			$("#bin").attr("src", "./Images/EasterEgg.png");
 		}
 	});
 	

@@ -1,140 +1,121 @@
 body {
-    background-image: url("./Images/bimage.jpg");
+  background-image: url('./Images/bimage.jpg');
+  background-size: cover;
 }
 
 .about {
-    text-align: center;
-    margin: 50px;
-    font-size: 50px;
+  text-align: center;
+  margin: 50px;
+  font-size: 50px;
 }
 
 .body {
-    margin: auto;
-    width: 80%;
-    font-size: 20px;
-    text-align: center;
-    margin-bottom: 2em;
+  margin: auto;
+  width: 80%;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 2em;
 }
 
 .whiteBox {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 0.5em;
-    margin-left: 0.3em;
-    margin-right: 0.3em;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.5em;
+  margin-left: 0.3em;
+  margin-right: 0.3em;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 /* NavBar CSS */
-.navbar-inverse .navbar-nav > li > a {
-    color: green;
+
+/* navbar */
+.navbar {
+  position: relative;
 }
 
-    .navbar-inverse .navbar-nav > li > a:hover {
-        color: green;
-    }
+#navbarMenu {
+  position: absolute;
+  right: 2%;
+}
 
-    .navbar-inverse .navbar-nav > li > a:link {
-        color: black;
-    }
+.navbar-collapse .navbar-nav > .nav-item > a {
+  color: green;
+}
 
-    .navbar-inverse .navbar-nav > li > a:active {
-        color: black;
-    }
+.navbar-collapse .navbar-nav > .nav-item > a:hover {
+  color: black;
+}
 
-    .navbar-inverse .navbar-nav > li > a:focus {
-        color: black;
-    }
+/* navbar animation */
+.navbar-content ul li a,
+.navbar-content ul li a:after,
+.navbar-content ul li a:before {
+  transition: all 0.5s;
+}
 
-    .navbar-inverse .navbar-nav > li > a:before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        bottom: 0;
-        left: 0;
-        background-color: #000;
-        visibility: hidden;
-        -webkit-transform: scaleX(0);
-        transform: scaleX(0);
-        -webkit-transition: all 0.3s ease-in-out 0s;
-        transition: all 0.3s ease-in-out 0s;
-    }
-
-    .navbar-inverse .navbar-nav > li > a:hover:before {
-        visibility: visible;
-        -webkit-transform: scaleX(1);
-        transform: scaleX(1);
-    }
+.navbar-content ul li a {
+  position: relative;
+}
+.navbar-content ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: black;
+  height: 2px;
+}
+.navbar-content ul li a:hover:after {
+  width: 100%;
+}
+/* Login button */
 
 .btn-danger {
-    background-color: green;
-    border-color: green;
-    float: right;
+  background-color: green;
+  border-color: green;
+  float: right;
+  margin-top: 1%;
 }
 
-.container-fluid {
-    position: relative;
-    font-weight: 600;
-    font-size: 14px;
-    text-transform: uppercase;
-    background: white;
+#Login-menu {
+  visibility: hidden;
 }
-
-.logo {
-    float: left;
-}
-
-.logo1 {
-    width: 80%;
-}
-
-.navbar-nav {
-    float: right;
-}
-
-.navbar-inverse .navbar-nav > li > a {
-    color: black;
-}
-
-.navbar-inverse {
-    margin: 0;
-    border-color: white;
-}
-
 /*About Us CSS*/
 #recycleimg {
-    width: 25%;
+  width: 25%;
 }
 
 #headertext {
-    text-align: center;
+  text-align: center;
 }
 
 .calculator {
-    width: 33%;
-    float: left;
-    text-align: center;
-    margin-top: 40px;
+  width: 33%;
+  float: left;
+  text-align: center;
+  margin-top: 40px;
 }
 
 #calculatorimg {
-    width: 8em;
-    margin-top: 1em;
-    margin-bottom: 1em;
+  width: 8em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .game {
-    width: 33%;
-    float: left;
-    text-align: center;
-    margin-top: 40px;
+  width: 33%;
+  float: left;
+  text-align: center;
+  margin-top: 40px;
 }
 
 #gameimg {
-    width: 8em;
-    margin-top: 2.5em;
-    margin-bottom: 2em;
+  width: 8em;
+  margin-top: 2.5em;
+  margin-bottom: 2em;
 }
 
 .locator {
@@ -150,16 +131,16 @@ body {
 }
 
 .team {
-    display: inline-block;
-    margin-left: 1em;
-    margin-right: 1em;
-	width: 14em;
+  display: inline-block;
+  margin-left: 1em;
+  margin-right: 1em;
+  width: 14em;
 }
 
 .profile {
-    width: 11em;
-    margin-top: 2.8em;
-    margin-bottom: 2.4em;
+  width: 11em;
+  margin-top: 2.8em;
+  margin-bottom: 2.4em;
 }
 
 .Eugene_Profile, .Edwin_Profile, .Harry_Profile, .Jun_Profile, .Kevin_Profile {
@@ -169,14 +150,14 @@ body {
 }
 
 @media only screen and (max-width: 800px) {
-    #headertext {
-        font-size: 1.5em;
-    }
+  #headertext {
+    font-size: 1.5em;
+  }
 
-    .body {
-        font-size: 1.2em;
-        width: 90%;
-    }
+  .body {
+    font-size: 1.2em;
+    width: 90%;
+  }
 }
 
 @media only screen and (max-width: 700px) {
@@ -221,5 +202,27 @@ body {
         margin-top: 0em;
         margin-bottom: 0em;
     }
+}
 
+/* NavBar mobile 700px */
+
+@media (max-width: 700px) {
+  #navbarMenu {
+    position: static;
+  }
+
+  .btn-danger {
+    display: none;
+    clear: both;
+  }
+
+  #Login-menu {
+    visibility: visible;
+  }
+  .navbar-content ul li a:hover:after {
+    width: 20%;
+  }
+  .navbar-content ul li a:after {
+    right: auto;
+  }
 }
