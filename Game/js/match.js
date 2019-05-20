@@ -11,7 +11,10 @@ var BOARD_ROWS;
 var MATCH_MIN = 3; // min number of same color gems required in a row to be considered a match
 
 var score = 0;
+var finalScore;
 var sctext1;
+
+var resultText;
 
 var timer;
 var time;
@@ -63,7 +66,10 @@ function countdown() {
     total++;
     t = 30 - total;
     if (t == -1) {
-        game.lockRender = true;
+        finalScore = score;
+    } else if (t <= -1) {
+        game.world.removeAll();
+        resultText = game.add.text(300, 210, 'Your Score is ' + finalScore, { font: "30px Arial", fill: "#ffffff" });
     } else {
         time.text = 'Timer: ' + t;
     }
