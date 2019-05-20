@@ -39,7 +39,6 @@ $(document).ready(function(){
   });
 
   $("#button_login").on("click", login);
-  $("#button_google").on("click", signInWithGoogle);
   $("#button_signup").on("click", signup);
   $("#button_submit").on("click", passwordReset);
 });
@@ -88,12 +87,6 @@ function signup() {
   });
 } 
 
-
-function signInWithGoogle() {
-  // Sign in Firebase using popup auth and Google as the identity provider.
-  var provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithRedirect(provider);
-}
 
 function logout() {
   firebase.auth().signOut().then(function() {
