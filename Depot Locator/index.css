@@ -1,17 +1,19 @@
+
+
 .btn-danger {
-  float: right;
+    float: right;
 }
 
 .about {
-  text-align: center;
-  margin: 50px;
-  font-size: 50px;
+    text-align: center;
+    margin: 50px;
+    font-size: 50px;
 }
 
 .body {
-  margin: auto;
-  width: 70%;
-  font-size: 20px;
+    margin: auto;
+    width: 70%;
+    font-size: 20px;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
@@ -23,56 +25,83 @@ body {
   min-height: 1100px;
 }
 
-/* navbar */
-.navbar {
-  position: relative;
-}
+/*nav bar */
 
-#navbarMenu {
-  position: absolute;
-  right: 2%;
-}
-
-.navbar-collapse .navbar-nav > .nav-item > a {
+.navbar-inverse .navbar-nav > li > a {
   color: green;
 }
 
-.navbar-collapse .navbar-nav > .nav-item > a:hover {
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: green;
+}
+
+.navbar-inverse .navbar-nav > li > a:link {
   color: black;
 }
 
-/* navbar animation */
-.navbar-content ul li a,
-.navbar-content ul li a:after,
-.navbar-content ul li a:before {
-  transition: all 0.5s;
+.navbar-inverse .navbar-nav > li > a:active {
+  color: black;
 }
 
-.navbar-content ul li a {
-  position: relative;
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: black;
 }
-.navbar-content ul li a:after {
+
+.navbar-inverse .navbar-nav > li > a:before {
+  content: '';
   position: absolute;
+  width: 100%;
+  height: 2px;
   bottom: 0;
   left: 0;
-  right: 0;
-  margin: auto;
-  width: 0%;
-  content: '.';
-  color: transparent;
-  background: black;
-  height: 2px;
-}
-.navbar-content ul li a:hover:after {
-  width: 100%;
-}
-/* Login button */
-
-#Login-menu {
+  background-color: #000;
   visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
 }
 
-/* Locator css */
+.navbar-inverse .navbar-nav > li > a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.btn-danger {
+  background-color: green;
+  border-color: green;
+  float: right;
+}
+
+.container-fluid {
+  position: relative;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  background: white;
+}
+.logo {
+  float: left;
+}
+
+.logo1 {
+  width: 80%;
+}
+
+.navbar-nav {
+  float: right;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: black;
+}
+
+.navbar-inverse {
+  margin: 0;
+  border-color: white;
+}
+
 .markerdiv {
   width: 70%;
   margin: 50px;
@@ -94,7 +123,7 @@ body {
   float: left;
 }
 
-.numberof {
+.numberof{
   text-align: center;
 }
 
@@ -111,31 +140,6 @@ body {
   border-radius: 20px;
 }
 
-.loc1,
-.loc2,
-.loc3 {
-  padding: 10px;
-}
-
-/* NavBar mobile 700px */
-
-@media (max-width: 700px) {
-  #navbarMenu {
-    position: static;
-  }
-
-  .btn-danger {
-    display: none;
-    clear: both;
-  }
-
-  #Login-menu {
-    visibility: visible;
-  }
-  .navbar-content ul li a:hover:after {
-    width: 20%;
-  }
-  .navbar-content ul li a:after {
-    right: auto;
-  }
+.loc1, .loc2, .loc3 {
+  padding: 5px;
 }
