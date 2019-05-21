@@ -22,7 +22,7 @@ a, a:link, a:visited, a:hover, a:active {
     padding-bottom: 50px;
     margin: auto;
     position: relative; 
-	margin-top: 12em;
+	margin-top: 10em;
     box-shadow: 3px 3px 5px #888888;
 }
 
@@ -91,7 +91,7 @@ a, a:link, a:visited, a:hover, a:active {
         height: 230px;
         padding-top: 45px;
         padding-bottom: 45px;
-        margin-top: 10em;
+        margin-top: 9em;
     }
     
     .icon--login {
