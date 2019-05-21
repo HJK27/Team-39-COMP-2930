@@ -46,12 +46,12 @@
             <li class="nav-item">
               <a href="../Contact/contact.html" class="nav-link">Contact Us</a>
             </li>
-            <li class="nav-item" id="Login-menu" onclick="window.location.href='../Login/login.html'">
-              <a href="#" class="nav-link">Login</a>
+            <li class="nav-item" id="Login-menu">
+              <a href="#" class="nav-link" id = "login--logout--nav"></a>
             </li>
           </div>
             <div class="navbar-login">
-              <button class="btn btn-danger navbar-btn" onclick="window.location.href='../Login/login.html'">Login</button>
+              <button class="btn btn-danger navbar-btn" id = "login--logout"></button>
             </div>
           </ul>
         </div>
@@ -181,5 +181,15 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"
   ></script>
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
+  <!-- Initialize Firebase -->
+  <script src="../Login/js/firebase-init.js"></script>
+  <script src = "../universal.js"></script>
   </body>
 </html>
