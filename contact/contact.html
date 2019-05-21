@@ -1,34 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Bootstrap 4 Introduction</title>
-    <link
+<head>
+    <title>Contact Us</title>
+    <style>
+        </style>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="HOMEstyle.css" />
-  </head>
-
-  <body>
-    <!-- nav bar-->
-    <div>
+    <link rel="stylesheet" href="./css/contact.css" />
+        <script src="../jquery-3.4.1.min.js"></script>
+</head>
+<body>
     <nav class="navbar navbar-expand-sm navbar-light bg-white">
-      <a href="./Home.html" class="navbar-brand">
-        <img src="Logo1.png"></a>
-      <button
-        class="navbar-toggler"
-        data-toggle="collapse"
-        data-target="#navbarMenu"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
+        <a href="../Home-Page/Home.html" class="navbar-brand">
+          <img src="./img/Logo1.png"></a>
+        <button
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
         <div class="collapse navbar-collapse" id="navbarMenu">
           <div class="navbar-content">
           <ul class="navbar-nav">
@@ -59,29 +59,39 @@
             </div>
           </ul>
         </div>
-    </nav>
-  </div>
-
-  <div class="page-Content">
-    <div class="landing-title"> 
-      <h1>
-        Make an Impact, and earn money at the same time!
-      </h1>
+      </nav><div id="prompt">
+            <h1 class="text top">Get in touch with us!</h1>
+            <p class="text info">Fill out the form below with your question and we will respond ASAP!</p> 
+        </div>
+    <div id="send">
+        <form action="mailto:bbuddies39@gmail.com" method="post" enctype="text/plain">
+            <fieldset>
+                <p class="iform" id="fname">Name:</p>
+                <input type="text" placeholder="Name" name="name" class="iform input--contact"><br><br>
+                <p class="iform">E-mail:</p>
+                <input type="email" placeholder="Email" name="email" class="iform input--contact"><br><br>
+                <p class="iform">Message:</p>
+                <textarea rows="8" cols="100" name="message" class="iform input--contact" id = "textarea--contact">
+                </textarea><br><br>
+                <input type = "submit" value = "Submit" class="iformsub">
+            </fieldset>
+        </form>
     </div>
-    <div class="home-button">
-      <button id="SignUp">Sign Up now</button>
+    <br>
+    <div id="contactUs">
+        <div id="adr" class="us">
+            <img src="./img/adr.png" alt="Address" class="cus">
+            <p class= "info--us"><b>3700 Willingdon Ave, Burnaby, BC</b></p>
+        </div>
+        <div id="phn" class="us">
+                <img src="./img/phn.png" alt="Phone" class="cus">
+            <p class = "info--us"><b>604-434-5734</b></p>
+        </div>
+        <div id="email" class="us">
+                <img src="./img/eml.png" alt="Email" class="cus">
+            <p class = "info--us"><b>bbuddies39@gmail.com</b></p>
+        </div>
     </div>
-    <div id="slider">
-      <figure>
-        <img src="Logo1.png">
-        <img src="Logo1.png">
-        <img src="Logo1.png">
-        <img src="Logo1.png">
-        <img src="Logo1.png">
-      </figure>
-    </div>
-  </div>
-  
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -107,6 +117,6 @@
     <!-- Initialize Firebase -->
     <script src="../Login/js/firebase-init.js"></script>
     <script src = "../universal.js"></script>
-    <script src = "./Home.js"></script>
-  </body>
+    <script src = "./js/contact.js"></script>
+</body>
 </html>
