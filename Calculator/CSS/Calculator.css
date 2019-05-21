@@ -2,153 +2,167 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 /* NavBar CSS */
-.navbar-inverse .navbar-nav > li > a {
-  color: green;
+
+/* navbar */
+.navbar {
+  position: relative;
 }
 
-.navbar-inverse .navbar-nav > li > a:hover {
-  color: green;
-}
-
-.navbar-inverse .navbar-nav > li > a:link {
-  color: black;
-}
-
-.navbar-inverse .navbar-nav > li > a:active {
-  color: black;
-}
-
-.navbar-inverse .navbar-nav > li > a:focus {
-  color: black;
-}
-
-.navbar-inverse .navbar-nav > li > a:before {
-  content: '';
+#navbarMenu {
   position: absolute;
-  width: 100%;
-  height: 2px;
+  right: 2%;
+}
+
+.navbar-collapse .navbar-nav > .nav-item > a {
+  color: green;
+}
+
+.navbar-collapse .navbar-nav > .nav-item > a:hover {
+  color: black;
+}
+
+/* navbar animation */
+.navbar-content ul li a,
+.navbar-content ul li a:after,
+.navbar-content ul li a:before {
+  transition: all 0.5s;
+}
+
+.navbar-content ul li a {
+  position: relative;
+}
+.navbar-content ul li a:after {
+  position: absolute;
   bottom: 0;
   left: 0;
-  background-color: #000;
-  visibility: hidden;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: black;
+  height: 2px;
 }
-
-.navbar-inverse .navbar-nav > li > a:hover:before {
-  visibility: visible;
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
+.navbar-content ul li a:hover:after {
+  width: 100%;
 }
+/* Login button */
 
 .btn-danger {
   background-color: green;
   border-color: green;
   float: right;
+  margin-top: 1%;
 }
 
-.container {
-  background-image: url('bimage.jpg');
-  opacity: 0.7;
-  width: 100%;
-  min-height: 1000px;
-  font-family: 'Open Sans';
-}
-
-.container-fluid {
-  position: relative;
-  font-weight: 600;
-  font-size: 14px;
-  text-transform: uppercase;
-  background: white;
-}
-.logo {
-  float: left;
-}
-
-.logo1 {
-  width: 80%;
-}
-
-.navbar-nav {
-  float: right;
-}
-
-.navbar-inverse .navbar-nav > li > a {
-  color: black;
-}
-
-.navbar-inverse {
-  margin: 0;
-  border-color: white;
+#Login-menu {
+  visibility: hidden;
 }
 
 /*Calculator CSS*/
 body {
-    background-image: url("../Images/background.jpg");
+  background-image: url('../Images/background.jpg');
+  background-size: auto;
+  margin-bottom: 2%;
+  min-height: 700px;
 }
 
 #title {
-    margin-top: 0.5em;
-    margin-bottom: 0.2em;
-    font-size: 32pt;
-    text-align: center;
+  margin-top: 0.5em;
+  margin-bottom: 0.2em;
+  font-size: 32pt;
+  text-align: center;
 }
 
 #picWrapper {
-    text-align: center;
-    margin: 0 auto;
-    width: 60%;
+  text-align: center;
+  margin: 0 auto;
+  width: 70%;
 }
 
 .select {
-    padding: 0.5em;
-    display: inline-block;
+  padding: 0.5em;
+  display: inline-block;
 }
 
 .select img {
-    width: 12em;
-    box-shadow: 6px 6px 10px #999999;
+  width: 12em;
+  box-shadow: 6px 6px 10px #999999;
 }
 
 #bin {
-    float: left;
-    width: 12em;
-    position: relative;
-    margin-left: 25%;
-    margin-bottom: 1em;
+  float: left;
+  width: 12em;
+  position: relative;
+  margin-left: 25%;
+  margin-bottom: 1em;
 }
 
 #counterWrapper {
-    font-size: 15pt;
-    float: right;
-    position: relative;
-    margin-top: 1.5em;
-    margin-right: 25%;
+  font-size: 15pt;
+  float: right;
+  position: relative;
+  margin-top: 1.5em;
+  margin-right: 25%;
 }
 
 .counter {
-    text-align: center;
-    background-color: white;
-    width: 8em;
-    border-radius: 8px;
-    box-shadow: 6px 6px 10px #999999;
+  text-align: center;
+  background-color: white;
+  width: 8em;
+  border-radius: 8px;
+  box-shadow: 6px 6px 10px #999999;
 }
 
 #moneyText {
-    margin-top: 0.5em;
+  margin-top: 0.5em;
 }
 
 @media only screen and (max-width: 938px) {
-    .select img {
-        width: 6em;
-    }
+  .select img {
+    width: 6em;
+  }
 }
 
 @media only screen and (max-width: 518px) {
-    #picWrapper {
-        width: 100%;
-    }
+  #picWrapper {
+    width: 100%;
+  }
+}
+
+/* NavBar mobile 700px */
+
+@media (max-width: 700px) {
+  #navbarMenu {
+    position: static;
+  }
+
+  .btn-danger {
+    display: none;
+    clear: both;
+  }
+
+  #Login-menu {
+    visibility: visible;
+  }
+  .navbar-content ul li a:hover:after {
+    width: 20%;
+  }
+  .navbar-content ul li a:after {
+    right: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .top {
+    font-size: 15pt;
+  }
+
+  .info {
+    padding-left: 0;
+    font-size: 10pt;
+  }
+  .info--us {
+    font-size: 6pt;
+  }
 }

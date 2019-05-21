@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function(){
     $("#SignUp").hover(function() {
         $(this).css("background-color", "#0CAA55");
     }, function() {

@@ -1,5 +1,6 @@
 body {
   background-image: url('./Images/bimage.jpg');
+  background-size: cover;
 }
 
 .about {
@@ -26,82 +27,62 @@ body {
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 /* NavBar CSS */
-.navbar-inverse .navbar-nav > li > a {
-  color: green;
+
+/* navbar */
+.navbar {
+  position: relative;
 }
 
-.navbar-inverse .navbar-nav > li > a:hover {
-  color: green;
-}
-
-.navbar-inverse .navbar-nav > li > a:link {
-  color: black;
-}
-
-.navbar-inverse .navbar-nav > li > a:active {
-  color: black;
-}
-
-.navbar-inverse .navbar-nav > li > a:focus {
-  color: black;
-}
-
-.navbar-inverse .navbar-nav > li > a:before {
-  content: '';
+#navbarMenu {
   position: absolute;
-  width: 100%;
-  height: 2px;
+  right: 2%;
+}
+
+.navbar-collapse .navbar-nav > .nav-item > a {
+  color: green;
+}
+
+.navbar-collapse .navbar-nav > .nav-item > a:hover {
+  color: black;
+}
+
+/* navbar animation */
+.navbar-content ul li a,
+.navbar-content ul li a:after,
+.navbar-content ul li a:before {
+  transition: all 0.5s;
+}
+
+.navbar-content ul li a {
+  position: relative;
+}
+.navbar-content ul li a:after {
+  position: absolute;
   bottom: 0;
   left: 0;
-  background-color: #000;
-  visibility: hidden;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: black;
+  height: 2px;
 }
-
-.navbar-inverse .navbar-nav > li > a:hover:before {
-  visibility: visible;
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
+.navbar-content ul li a:hover:after {
+  width: 100%;
 }
+/* Login button */
 
 .btn-danger {
   background-color: green;
   border-color: green;
   float: right;
+  margin-top: 1%;
 }
 
-.container-fluid {
-  position: relative;
-  font-weight: 600;
-  font-size: 14px;
-  text-transform: uppercase;
-  background: white;
+#Login-menu {
+  visibility: hidden;
 }
-
-.logo {
-  float: left;
-}
-
-.logo1 {
-  width: 80%;
-}
-
-.navbar-nav {
-  float: right;
-}
-
-.navbar-inverse .navbar-nav > li > a {
-  color: black;
-}
-
-.navbar-inverse {
-  margin: 0;
-  border-color: white;
-}
-
 /*About Us CSS*/
 #recycleimg {
   width: 25%;
@@ -137,23 +118,6 @@ body {
   margin-bottom: 2em;
 }
 
-.signup {
-  width: 33%;
-  float: left;
-  text-align: center;
-  margin-top: 40px;
-}
-
-#signupimg {
-  width: 11em;
-  margin-top: 2.8em;
-  margin-bottom: 2.4em;
-}
-
-.team {
-  display: inline-block;
-  margin-left: 1em;
-  margin-right: 1em;
 .locator {
     width: 33%;
     float: left;
@@ -167,10 +131,10 @@ body {
 }
 
 .team {
-    display: inline-block;
-    margin-left: 1em;
-    margin-right: 1em;
-	width: 14em;
+  display: inline-block;
+  margin-left: 1em;
+  margin-right: 1em;
+  width: 14em;
 }
 
 .profile {
@@ -197,48 +161,16 @@ body {
 }
 
 @media only screen and (max-width: 700px) {
-  #calculatorimg {
-    width: 5em;
-  }
+    #calculatorimg {
+        width: 5em;
+    }
 
-  #gameimg {
-    width: 5em;
-    margin-top: 1.8em;
-    margin-bottom: 1.8em;
-  }
+    #gameimg {
+        width: 5em;
+        margin-top: 1.8em;
+        margin-bottom: 1.8em;
+    }
 
-  #signupimg {
-    width: 8em;
-    margin-top: 1.8em;
-    margin-bottom: 1.8em;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  #headertext {
-    font-size: 1em;
-  }
-
-  .body {
-    font-size: 0.8em;
-  }
-
-  #calculatorimg {
-    width: 3em;
-  }
-
-  #gameimg {
-    width: 3em;
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
-  }
-
-  #signupimg {
-    width: 5em;
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
-  }
-}
     #locatorimg {
         width: 6em;
         margin-top: 0.5em;
@@ -270,5 +202,27 @@ body {
         margin-top: 0em;
         margin-bottom: 0em;
     }
+}
 
+/* NavBar mobile 700px */
+
+@media (max-width: 700px) {
+  #navbarMenu {
+    position: static;
+  }
+
+  .btn-danger {
+    display: none;
+    clear: both;
+  }
+
+  #Login-menu {
+    visibility: visible;
+  }
+  .navbar-content ul li a:hover:after {
+    width: 20%;
+  }
+  .navbar-content ul li a:after {
+    right: auto;
+  }
 }

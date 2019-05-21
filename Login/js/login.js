@@ -47,12 +47,12 @@ firebase.auth().onAuthStateChanged(user => {
   if (user) {
     $("#loginWindow").css("display", "none");
     $("#signupWindow").css("display", "none");
-    $("#signedinWindow").css("display", "initial");
+    $("#signedinWindow").css("display", "block");
     email = user.email;
     document.getElementById("Hello").innerHTML = "Hi \"" + email + "\",";
     setTimeout(function(){ window.location = '../Home-Page/Home.html'; }, 2000);
   } else {
-    $("#loginWindow").css("display", "initial");
+    $("#loginWindow").css("display", "block");
     $("#signupWindow").css("display", "none");
     $("#signedinWindow").css("display", "none");
   }
