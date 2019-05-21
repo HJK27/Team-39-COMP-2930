@@ -1,8 +1,29 @@
-@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+.btn-danger {
+  float: right;
+}
+
+.about {
+  text-align: center;
+  margin: 50px;
+  font-size: 50px;
+}
+
+.body {
+  margin: auto;
+  width: 70%;
+  font-size: 20px;
+}
+
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-/* NavBar CSS */
+body {
+  background-image: url('images/bimage.jpg');
+  background-repeat: no-repeat;
+  margin-bottom: 2%;
+  min-height: 1100px;
+}
 
+/* navbar */
 .navbar {
   position: relative;
 }
@@ -47,36 +68,53 @@
 }
 /* Login button */
 
-.btn-danger {
-  background-color: green;
-  border-color: green;
-  float: right;
-  margin-top: 1%;
-}
-
 #Login-menu {
   visibility: hidden;
 }
 
-/*Game CSS*/
-body {
-  background-image: url('../Images/GameBackground.jpeg');
+/* Locator css */
+.markerdiv {
+  width: 70%;
+  margin: 50px;
 }
 
-#title {
-  margin-top: 0.5em;
-  margin-bottom: 0.2em;
-  font-size: 32pt;
+.title {
   text-align: center;
 }
 
-#gameDiv {
-  margin-left: 18%;
-  margin-right: 18%;
-  width: 66%;
-  height: auto;
-  box-shadow: 4px 4px 14px 0px rgba(0, 0, 0, 0.75);
-  margin-bottom: 5%;
+#title {
+  font-size: 60px;
+}
+
+#map {
+  height: 600px;
+  width: 700px;
+  border-style: groove;
+  border-radius: 20px;
+  float: left;
+}
+
+.numberof {
+  text-align: center;
+}
+
+#numberof {
+  font-size: 30px;
+}
+
+.locations {
+  background-color: white;
+  width: 430px;
+  height: 600px;
+  float: right;
+  border-style: groove;
+  border-radius: 20px;
+}
+
+.loc1,
+.loc2,
+.loc3 {
+  padding: 10px;
 }
 
 /* NavBar mobile 700px */
