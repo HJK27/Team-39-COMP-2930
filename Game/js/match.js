@@ -62,16 +62,22 @@ function create() {
 
 }
 
+// uses the 'timer' to countdown from given number of seconds
 function countdown() {
 
     total++;
     t = 30 - total;
+    // sets the final score, fixes the problem of the score updating at the results screen when a combo is going
     if (t == 0) {
         finalScore = score;
-    } else if (t <= 0) {
+    }
+    // shows the result screen
+    else if (t <= 0) {
         game.world.removeAll();
         resultText = game.add.text(300, 210, 'Your Score is ' + finalScore, { font: "30px Arial", fill: "#ffffff" });
-    } else {
+    }
+    // updates timer
+    else {
         time.text = 'Timer: ' + t;
     }
 
