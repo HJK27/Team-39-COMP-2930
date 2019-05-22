@@ -10,9 +10,9 @@
     />
     <link rel="stylesheet" href="./FAQstyle.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   </head>
   <body>
+    <!-- Nav Bar -->
     <header>
       <nav class="navbar navbar-expand-sm navbar-light bg-white">
         <a href="../Home-Page/Home.html" class="navbar-brand">
@@ -57,7 +57,10 @@
         </div>
       </nav>
     </header>
+
+    <!-- FAQ body -->
     <div class="contain">
+      <!-- header -->
       <div id="FAQtitle">
         <h2>FREQUENTLY ASKED <b>QUESTIONS</b></h2>
         <div id="FAQp">
@@ -68,80 +71,74 @@
         </p>
       </div>
       </div>
+
       <div id="showcase">
       <div class="FAQcontent" id="FAQdrop">
-        <button class="accordion">Section 1</button>
+        <!-- Question 1 -->
+        <button class="accordion"><b>How do I use your features?</b></button>
         <div class="panel">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            You can simply explore different pages on our website through the navbar at the top.
           </p>
         </div>
 
-        <button class="accordion">Section 2</button>
+        <!-- Question 2 -->
+        <button class="accordion"><b>What features do you guys offer?</b></button>
         <div class="panel">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            We have a depot calculator that shows how much you will earn for returning number of bottles you have.
+            In addition, we have a bottle matching game where you match 3 bottles in 30 second to aim for highest point.
           </p>
         </div>
 
-        <button class="accordion">Section 3</button>
+        <!-- Question 3 -->
+        <button class="accordion"><b>What other features do you guys plan on adding in future?</b></button>
         <div class="panel">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            In future, we would like to add a high score board for the game, and location saver for the depot locator!
           </p>
         </div>
-        <button class="accordion">Section 4</button>
+
+        <!-- Question 4 -->
+        <button class="accordion"><b>Is your service free?</b></button>
         <div class="panel">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            Yes! Our web-app is completely free to use and you can also send us any suggestion if you would like!
           </p>
         </div>
-        <button class="accordion">Section 5</button>
+
+        <!-- Question 5 -->
+        <button class="accordion"><b>How can we contact you guys?</b></button>
         <div class="panel">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            On the navbar located at the top of the page, you can click on the "Contact" which will send you to our contact page.
+            From there, you send us your message and we will try to respond asap!
           </p>
         </div>
-        <button class="accordion">Section 6</button>
+
+        <!-- Question 6 -->
+        <button class="accordion"><b>What are some cool things that bottles can recycle into?</b></button>
         <div class="panel">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            Aluminium cans can turn into bicycles, plastic bottles are used to create fleece jacket, carpet, new plastic bottles, glass bottles can be used as material for road base!
           </p>
         </div>
-        <button class="accordion">Section 7</button>
+
+        <!-- Question 7 -->
+        <button class="accordion"><b>What benefit can I bring to the enviornment by recycling bottles?</b></button>
         <div class="panel">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            By recycling your bottles, you will be contributing towards decrasing the pollution and reducing greenhouse gas emission!
+            The way recycling bottle works is that landfill facilities will incinerate the bottles you bring in to save waste, which can emit toxic pollutants or irritants into the air!
           </p>
         </div>
-        <button class="accordion">Section 8</button>
+
+        <!-- Question 8 -->
+        <button class="accordion"><b>Will you guys be updating the pages?</b></button>
         <div class="panel">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            Yes, some of the group members were not satisified with the feature that have been developed so far.
+            We plan on updating the web page with more content and features that's been set aside to our backlog! 
           </p>
         </div>
       </div>
@@ -150,6 +147,8 @@
       </div>
     </div>
     </div>
+
+    <!-- drop down function for the questions -->
     <script>
       var acc = document.getElementsByClassName('accordion');
       var i;
@@ -166,30 +165,33 @@
         });
       }
     </script>
+
+  <!-- Scripts for nav bar -->
     <script
     src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"
-  ></script>
-  <script
+    ></script>
+    <script
     src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"
-  ></script>
-  <script
+    ></script>
+    <script
     src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"
-  ></script>
+    ></script>
 
-  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
 
-  <!-- Add Firebase products that you want to use -->
+    <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
-  <!-- Initialize Firebase -->
-  <script src="../Login/js/firebase-init.js"></script>
-  <script src = "../universal.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
+    <!-- Initialize Firebase -->
+    <script src="../Login/js/firebase-init.js"></script>
+    <!-- javaScript for the login/logout button on the nav bar -->
+    <script src = "../universal.js"></script>
   </body>
 </html>
