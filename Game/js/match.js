@@ -8,7 +8,7 @@ var ICON_SPACING = 2;
 var ICON_SIZE_SPACED = ICON_SIZE + ICON_SPACING;
 var BOARD_COLS;
 var BOARD_ROWS;
-var MATCH_MIN = 3; // min number of same color icons required in a row to be considered a match
+var MATCH_MIN = 3; // min number of same type icons required in a row to be considered a match
 
 var score = 0;
 var finalScore;
@@ -62,16 +62,22 @@ function create() {
 
 }
 
+// uses the 'timer' to countdown from given number of seconds
 function countdown() {
 
     total++;
     t = 30 - total;
+    // sets the final score, fixes the problem of the score updating at the results screen when a combo is going
     if (t == 0) {
         finalScore = score;
-    } else if (t <= 0) {
+    }
+    // shows the result screen
+    else if (t <= 0) {
         game.world.removeAll();
         resultText = game.add.text(300, 210, 'Your Score is ' + finalScore, { font: "30px Arial", fill: "#ffffff" });
-    } else {
+    }
+    // updates timer
+    else {
         time.text = 'Timer: ' + t;
     }
 
@@ -260,7 +266,7 @@ function calcIconId(posX, posY) {
 
 }
 
-// since the icons are a spritesheet, their color is the same as the current frame number
+// since the icons are a spritesheet, their type is the same as the current frame number
 function getIconColor(icon) {
 
     return icon.frame;
@@ -295,9 +301,9 @@ function checkIfIconCanBeMovedHere(fromPosX, fromPosY, toPosX, toPosY) {
     return false;
 }
 
-// count how many icons of the same color lie in a given direction
-// eg if moveX=1 and moveY=0, it will count how many icons of the same color lie to the right of the icon
-// stops counting as soon as a icon of a different color or the board end is encountered
+// count how many icons of the same type lie in a given direction
+// eg if moveX=1 and moveY=0, it will count how many icons of the same type lie to the right of the icon
+// stops counting as soon as a icon of a different type or the board end is encountered
 function countSameColorIcons(startIcon, moveX, moveY) {
 
     var curX = startIcon.posX + moveX;
@@ -325,7 +331,7 @@ function swapIconPosition(icon1, icon2) {
 
 }
 
-// count how many icons of the same color are above, below, to the left and right
+// count how many icons of the same type are above, below, to the left and right
 // if there are more than 3 matched horizontally or vertically, kill those icons
 // if no match was made, move the icons back into their starting positions
 function checkAndKillIconMatches(icon) {

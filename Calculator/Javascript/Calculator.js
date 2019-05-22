@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	/* Styling when buttons are hovered */
 	$(".select").hover(function() {
 		$(this).css("filter", "opacity(70%)");
 		$(this).css("transition","filter 0.4s");
@@ -7,14 +8,18 @@ $(document).ready(function(){
 		$(this).css("transition","filter 0.4s");
 	});
 	
+	/* Variables for calculator and easter egg */
 	var itemCounter = 0;
 	var moneyCounter = 0.00;
 	var secret = 0;
 	
+	/* Increments the amount of items */
 	$(".select").click(function() {	
 		itemCounter++;
 		$("#itemCounter").text(itemCounter);
 		
+		
+	/* Changes the recycling bin based on item amount */
 	if (itemCounter == 10) {
 		$("#bin").attr("src", "./Images/recycling-bin-1.png");
 	} else if (itemCounter == 20) {
@@ -24,6 +29,8 @@ $(document).ready(function(){
 	}
 	});
 	
+	/* Increments refund value based on button clicked.
+		Will also advance the easter egg variable when button is clicked in correct sequence. */
 	$("#aluminum").click(function() {
 		moneyCounter = moneyCounter + 0.05;
 		$("#moneyCounter").text("$" + Number.parseFloat(moneyCounter).toFixed(2));

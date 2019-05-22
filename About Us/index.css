@@ -1,34 +1,6 @@
-body {
-  background-image: url('./Images/bimage.jpg');
-  background-size: cover;
-}
-
-.about {
-  text-align: center;
-  margin: 50px;
-  font-size: 50px;
-}
-
-.body {
-  margin: auto;
-  width: 80%;
-  font-size: 20px;
-  text-align: center;
-  margin-bottom: 2em;
-}
-
-.whiteBox {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 0.5em;
-  margin-left: 0.3em;
-  margin-right: 0.3em;
-}
-
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 /* NavBar CSS */
-
-/* navbar */
 .navbar {
   position: relative;
 }
@@ -71,8 +43,8 @@ body {
 .navbar-content ul li a:hover:after {
   width: 100%;
 }
-/* Login button */
 
+/* Login button */
 .btn-danger {
   background-color: green;
   border-color: green;
@@ -84,6 +56,32 @@ body {
   visibility: hidden;
 }
 /*About Us CSS*/
+body {
+  background-image: url('./Images/bimage.jpg');
+  background-size: cover;
+}
+
+.about {
+  text-align: center;
+  margin: 50px;
+  font-size: 50px;
+}
+
+.body {
+  margin: auto;
+  width: 80%;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.whiteBox {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.5em;
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+}
+
 #recycleimg {
   width: 25%;
 }
@@ -149,6 +147,7 @@ body {
     margin-bottom: 2.4em;
 }
 
+/* About Us media queries */
 @media only screen and (max-width: 800px) {
   #headertext {
     font-size: 1.5em;
