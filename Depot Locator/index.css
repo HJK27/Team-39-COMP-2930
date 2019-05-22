@@ -1,32 +1,6 @@
-.btn-danger {
-  float: right;
-}
-
-.about {
-  text-align: center;
-  margin: 50px;
-  font-size: 50px;
-}
-
-.body {
-  margin: auto;
-  width: 70%;
-  font-size: 20px;
-}
-
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-body {
-  background-size: cover;
-  background-image: url('images/bimage.jpg');
-  background-repeat: no-repeat;
-  margin-bottom: 2%;
-  min-height: 1100px;
-}
-
-/*nav bar */
-
-/* navbar */
+/* Navbar CSS */
 .navbar {
   position: relative;
 }
@@ -44,7 +18,7 @@ body {
   color: black;
 }
 
-/* navbar animation */
+/* Navbar animation */
 .navbar-content ul li a,
 .navbar-content ul li a:after,
 .navbar-content ul li a:before {
@@ -69,8 +43,8 @@ body {
 .navbar-content ul li a:hover:after {
   width: 100%;
 }
-/* Login button */
 
+/* Login button */
 .btn-danger {
   background-color: green;
   border-color: green;
@@ -83,6 +57,29 @@ body {
 }
 
 /* locator css */
+body {
+  background-size: cover;
+  background-image: url('images/bimage.jpg');
+  background-repeat: no-repeat;
+  margin-bottom: 2%;
+  min-height: 1100px;
+}
+
+.btn-danger {
+  float: right;
+}
+
+.about {
+  text-align: center;
+  margin: 50px;
+  font-size: 50px;
+}
+
+.body {
+  margin: auto;
+  width: 70%;
+  font-size: 20px;
+}
 
 .markerdiv {
   width: 70%;
@@ -122,13 +119,13 @@ body {
   border-radius: 20px;
 }
 
-<<<<<<< HEAD
 .loc1,
 .loc2,
 .loc3 {
   padding: 10px;
 }
 
+/* Locator media queries */
 @media (max-width: 1000px) {
   #map {
     width: 100%;
@@ -143,7 +140,6 @@ body {
 }
 
 /* NavBar mobile 700px */
-
 @media (max-width: 700px) {
   #navbarMenu {
     position: static;
@@ -171,4 +167,3 @@ body {
 
   .location {
   }
-
