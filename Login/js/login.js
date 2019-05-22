@@ -15,7 +15,7 @@ $(document).ready(function(){
     $(this).css("background-color", "#0CAA55");
   })
 
-  //functions when the switch is clicked
+
   $("#signupSwitch").click(function() {
 		$("#loginWindow").fadeOut(300);
 		$("#signupWindow").delay(300).fadeIn(300);
