@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  // Animation on the switches when the mouse hover on them
 	$(".switch").hover(function() {
 		$(this).css("text-shadow","-1px 0 #24bf40, 0 1px #24bf40, 1px 0 #24bf40, 0 -1px #24bf40");
 		$(this).css("transition","filter 0.4s");
@@ -7,12 +8,14 @@ $(document).ready(function(){
 		$(this).css("transition","filter 0.4s");
   });
 
+  // background color changes when the mouse hover on the buttons
   $(".button").hover(function() {
     $(this).css("background-color", "#5cbdc5");
   }, function() {
     $(this).css("background-color", "#0CAA55");
   })
 
+  //functions when the switch is clicked
   $("#signupSwitch").click(function() {
 		$("#loginWindow").fadeOut(300);
 		$("#signupWindow").delay(300).fadeIn(300);
@@ -38,11 +41,13 @@ $(document).ready(function(){
 		$("#loginWindow").delay(300).fadeIn(300);
   });
 
+  //events for different buttons
   $("#button_login").on("click", login);
   $("#button_signup").on("click", signup);
   $("#button_submit").on("click", passwordReset);
 });
 
+//function when user is logged in and logged out
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
     $("#loginWindow").css("display", "none");
@@ -58,26 +63,23 @@ firebase.auth().onAuthStateChanged(user => {
   }
 });
 
+// function when the user click the login button
 function login() {
-	
-	var userEmail = document.getElementById("email_login").value;
+  var userEmail = document.getElementById("email_login").value;
 	var userPw = document.getElementById("pw_login").value;
 	
-  
-    firebase.auth().signInWithEmailAndPassword(userEmail, userPw).catch(function(error) {
-    // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        window.alert("Error: "  + errorMessage);
-    });
+  firebase.auth().signInWithEmailAndPassword(userEmail, userPw).catch(function(error) {
+  // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      window.alert("Error: "  + errorMessage);
+  });
 }
 
-
+// function when the user click the signup button
 function signup() {
-	
   var newEmail = document.getElementById("email_signup").value;
   var newPass = document.getElementById("pw_signup").value;
-  
   
   firebase.auth().createUserWithEmailAndPassword(newEmail, newPass).catch(function(error) {
    //Handle Errors here.
@@ -87,7 +89,7 @@ function signup() {
   });
 } 
 
-
+// function when the user click the logout button
 function logout() {
   firebase.auth().signOut().then(function() {
     window.location = 'login.html';
@@ -96,6 +98,7 @@ function logout() {
   });
 }
 
+// function when the user click the submit button for the account recovery
 function passwordReset() {
   var email = document.getElementById("email_pwreset").value;
   
